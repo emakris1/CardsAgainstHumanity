@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cardsagainsthumanity.app" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cardsagainsthumanity.app.MainMenu"
+            android:label="@string/title_activity_main_menu"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.HowToPlay"
+            android:label="@string/title_activity_how_to_play"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardsagainsthumanity.app.MainMenu" />
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.VersionSelection"
+            android:label="@string/title_activity_version_selection"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardsagainsthumanity.app.MainMenu" />
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.GameSetup"
+            android:label="@string/title_activity_game_setup"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.cardsagainsthumanity.app.VersionSelection" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardsagainsthumanity.app.VersionSelection" />
+        </activity>
+    </application>
+
+</manifest>
