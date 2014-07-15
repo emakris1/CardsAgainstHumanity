@@ -20,9 +20,7 @@
     <string name="title_activity_how_to_play">How To Play</string>
     <string name="title_activity_version_selection">Version Selection</string>
     <string name="title_activity_game_setup">Game Setup</string>
-<<<<<<< HEAD
     <string name="white_card_placeholder">White Card Text Goes Here</string>
-=======
     <string name="HTP_placeholder1">1. To start the game, each player draws ten White Cards.</string>
     <string name="HTP_placeholder2">2. Player 1 goes first. The order is determined by the players.</string>
     <string name="HTP_placeholder3">3. Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.</string>
@@ -32,8 +30,6 @@
     <string name="HTP_placeholder7">7. Some black cards require the players to pick 2 white cards:</string>
     <string name="HTP_placeholder8">A. To answer these, each player plays two White Cards in combination.</string>
     <string name="HTP_placeholder9">B. The cards must be played in the order the Card Czar should read them.</string>
-
->>>>>>> origin/master
 
     <string-array name="array_num_players">
         <item>2</item>
