@@ -31,7 +31,7 @@ public class GameSetup extends Activity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.game_setup, menu);
+        //getMenuInflater().inflate(R.menu.game_setup, menu);
         return true;
     }
 
@@ -60,8 +60,8 @@ public class GameSetup extends Activity
             {
                 Game.numPlayers = Integer.parseInt(spPlayers.getSelectedItem().toString());
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
-                Game.readInput();
-                Game.createPlayers();
+                //Game.readInput();
+                //Game.createPlayers();
                 showDialog();
             }
         });
@@ -76,7 +76,7 @@ public class GameSetup extends Activity
         {
             public void onClick(DialogInterface dialog, int which)
             {
-                //startActivity(new Intent(getApplicationContext(), CardCzarRead.class));
+                startActivity(new Intent(getApplicationContext(), CardCzarRead.class));
             }
         });
 

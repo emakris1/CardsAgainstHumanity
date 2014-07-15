@@ -8,6 +8,7 @@
     <string name="button_dirty_deck">\"Dirty\" Deck</string>
     <string name="button_clean_deck">\"Clean\" Deck</string>
     <string name="button_create_game">Create Game</string>
+    <string name="black_card_placeholder">In an attempt to reach a wider audience, the Smithsonian Museum of Natural History has opened an interactive exhibit on _____</string>
     <string name="spinner_num_players">Choose the number of players</string>
     <string name="spinner_max_awesome_points">Choose the maximum number of Awesome Points</string>
     <string name="text_dirty_deck">Full, uncensored card deck. Must be 18+.</string>
@@ -20,6 +21,7 @@
     <string name="title_activity_how_to_play">How To Play</string>
     <string name="title_activity_version_selection">Version Selection</string>
     <string name="title_activity_game_setup">Game Setup</string>
+    <string name="white_card_placeholder">White Card Text Goes Here</string>
 
     <string-array name="array_num_players">
         <item>2</item>
@@ -30,7 +32,6 @@
         <item>7</item>
         <item>8</item>
     </string-array>
-
     <string-array name="array_max_awesome_points">
         <item>1</item>
         <item>2</item>
@@ -41,5 +42,8 @@
         <item>7</item>
         <item>8</item>
     </string-array>
+
+    <string name="title_activity_card_czar_read">Card Czar Read</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

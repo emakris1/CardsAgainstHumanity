@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class HowToPlay extends Activity
+
+public class CardCzarRead extends Activity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_how_to_play);
+        setContentView(R.layout.activity_card_czar_read);
     }
 
 
@@ -20,7 +21,7 @@ public class HowToPlay extends Activity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.how_to_play, menu);
+        //getMenuInflater().inflate(R.menu.card_czar_read, menu);
         return true;
     }
 

@@ -37,7 +37,6 @@ public class Game extends Activity
     {
         super.onCreate(savedInstanceState);
         res = getResources();
-        readInput();
     }
 
     /**

@@ -9,19 +9,18 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.cardsagainsthumanity.app.MainMenu"
-            android:label="@string/title_activity_main_menu"
+            android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.cardsagainsthumanity.app.HowToPlay"
             android:label="@string/title_activity_how_to_play"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu" >
+            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cardsagainsthumanity.app.MainMenu" />
@@ -29,8 +28,8 @@
         <activity
             android:name="com.cardsagainsthumanity.app.VersionSelection"
             android:label="@string/title_activity_version_selection"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu" >
+            android:parentActivityName="com.cardsagainsthumanity.app.MainMenu"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cardsagainsthumanity.app.MainMenu" />
@@ -38,11 +37,16 @@
         <activity
             android:name="com.cardsagainsthumanity.app.GameSetup"
             android:label="@string/title_activity_game_setup"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.cardsagainsthumanity.app.VersionSelection" >
+            android:parentActivityName="com.cardsagainsthumanity.app.VersionSelection"
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cardsagainsthumanity.app.VersionSelection" />
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.CardCzarRead"
+            android:label="@string/title_activity_card_czar_read"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
