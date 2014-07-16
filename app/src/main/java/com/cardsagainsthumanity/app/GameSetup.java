@@ -10,6 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 /**
  * Activity Screen on which the user selects the number of players and the target number of awesome points.
@@ -60,8 +68,8 @@ public class GameSetup extends Activity
             {
                 Game.numPlayers = Integer.parseInt(spPlayers.getSelectedItem().toString());
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
-                //Game.readInput();
-                //Game.createPlayers();
+                readInput();
+                createPlayers();
                 showDialog();
             }
         });
@@ -82,6 +90,85 @@ public class GameSetup extends Activity
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+    }
+
+    /**
+     * Reads input; checks if the user is playing the
+     * clean or dirty game, and then reads from the
+     * appropriate deck.
+     */
+    public void readInput()
+    {
+        InputStream inputS;
+        BufferedReader buffR;
+        String str;
+        Game.blackDeck = new LinkedList<BlackCard>();
+        Game.whiteDeck = new LinkedList<WhiteCard>();
+
+        // Read the Black Deck
+        if (Game.isDirty)
+            inputS = getResources().openRawResource(R.raw.dirtyblack);
+        else
+            inputS = getResources().openRawResource(R.raw.cleanblack);
+        buffR = new BufferedReader(new InputStreamReader(inputS));
+
+        try
+        {
+            while ((str = buffR.readLine()) != null)
+            {
+                Integer num = (Integer.valueOf(str.subSequence(0,1).charAt(0)) - '0');
+                String text = str.substring(2);
+                Game.blackDeck.add(new BlackCard(num, text));
+            }
+
+            buffR.close();
+            inputS.close();
+        }
+        catch (IOException ex) {ex.printStackTrace();}
+
+        // Read the White Deck
+        if (Game.isDirty)
+            inputS = getResources().openRawResource(R.raw.dirtywhite);
+        else
+            inputS = getResources().openRawResource(R.raw.cleanwhite);
+        buffR = new BufferedReader(new InputStreamReader(inputS));
+
+        try
+        {
+            while ((str = buffR.readLine()) != null)
+                Game.whiteDeck.add(new WhiteCard(str));
+
+            buffR.close();
+            inputS.close();
+        }
+        catch (IOException ex) {ex.printStackTrace();};
+
+        Collections.shuffle(Game.blackDeck);
+        Collections.shuffle(Game.whiteDeck);
+    }
+
+    /**
+     * Method to create the list of players
+     * Deals the white cards
+     * Sets the first player in the list to be Card Czar
+     */
+    public static void createPlayers()
+    {
+        Game.players = new ArrayList<Player>();
+
+        for (int i = 0; i < Game.numPlayers; i++)
+        {
+            Player temp = new Player(i);
+            for (int j = 0; j < 10; j++)
+            {
+                temp.addPlayerCard(Game.whiteDeck.removeFirst());
+                temp.getPlayerCards().get(j).setOwner(j);
+            }
+
+            Game.players.add(temp);
+            //players.get(0).toggleIsCardCzar();
+            Game.cardCzar = 0;
+        }
     }
 
 }

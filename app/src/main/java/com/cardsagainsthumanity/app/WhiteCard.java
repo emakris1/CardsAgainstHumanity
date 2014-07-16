@@ -10,7 +10,7 @@ public class WhiteCard
     private String text;
     private Integer owner;
 
-    public WhiteCard(String str) {text = str;}
+    public WhiteCard(String str) {this.text = str;}
 
     public String getText() {return this.text;}
 
