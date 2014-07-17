@@ -46,14 +46,14 @@ public class CardCzarRead extends Activity
 
     public void displayBlackCardText()
     {
-        TextView txtBlackCard = (TextView) findViewById(R.id.txtBlackCard);
+        TextView text = (TextView) findViewById(R.id.txtBlackCardLarge);
         Game.setCurrentBlackCard();
-        txtBlackCard.setText(Game.getCurrentBlackCard().getText());
+        text.setText(Game.getCurrentBlackCard().getText());
     }
 
     public void onBlackCardClick()
     {
-        final ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCard);
+        final ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCardLarge);
 
         blackCard.setOnClickListener(new View.OnClickListener()
         {

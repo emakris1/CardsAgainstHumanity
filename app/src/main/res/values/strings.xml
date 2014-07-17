@@ -18,13 +18,14 @@
     <string name="text_version_prompt">Please select your Deck</string>
     <string name="text_num_players">Number of Players</string>
     <string name="text_max_awesome_points">Maximum Awesome Points</string>
-    <string name="text_current_player_number">Player #</string>
+    <string name="text_current_player_number">Player</string>
     <string name="text_current_player_points">Awesome Points</string>
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="title_activity_how_to_play">How To Play</string>
     <string name="title_activity_version_selection">Version Selection</string>
     <string name="title_activity_game_setup">Game Setup</string>
     <string name="white_card_placeholder">White Card Text Goes Here</string>
+    <string name="white_card_prompt">Long press your card(s) to submit them.</string>
     <string name="HTP_placeholder1">1. To start the game, each player draws ten White Cards.</string>
     <string name="HTP_placeholder2">2. Player 1 goes first. The order is determined by the players.</string>
     <string name="HTP_placeholder3">3. Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.</string>

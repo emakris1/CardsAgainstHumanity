@@ -166,8 +166,8 @@ public class GameSetup extends Activity
             }
 
             Game.players.add(temp);
-            //players.get(0).toggleIsCardCzar();
-            Game.cardCzar = 0;
+            Game.currentCardCzar = 0;
+            Game.currentPlayer = 1;
         }
     }
 

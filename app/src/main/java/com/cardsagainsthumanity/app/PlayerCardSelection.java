@@ -1,9 +1,16 @@
 package com.cardsagainsthumanity.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class PlayerCardSelection extends Activity
@@ -14,6 +21,8 @@ public class PlayerCardSelection extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_card_selection);
+        onBlackCardClick();
+        setPlayerInfo();
     }
 
 
@@ -35,6 +44,28 @@ public class PlayerCardSelection extends Activity
         if (id == R.id.action_settings)
             return true;
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBlackCardClick()
+    {
+        final ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCardSmall);
+
+        blackCard.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                CharSequence text = "When the Black Card is clicked, a full screen image of the card will appear.";
+                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void setPlayerInfo()
+    {
+        TextView player = (TextView) findViewById(R.id.txtCurrentPlayerNum);
+        TextView points = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
+        player.setText("Player: " + (Game.currentPlayer + 1));
+        points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
     }
 
 }

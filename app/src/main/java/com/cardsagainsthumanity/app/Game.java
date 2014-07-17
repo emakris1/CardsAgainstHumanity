@@ -12,13 +12,14 @@ public class Game
 
     public static LinkedList<BlackCard> blackDeck;
     public static LinkedList<WhiteCard> whiteDeck;
-    public static ArrayList<Player> players;
-    public static int numPlayers;
-    public static Boolean isDirty;
     public static BlackCard currentBlackCard;
     public static ArrayList<ArrayList<WhiteCard>> submittedCards;   //two dimensional ArrayList for cases when multiple white cards are submitted
+    public static ArrayList<Player> players;
+    public static Boolean isDirty;
     public static int maxAwesomePoints;
-    public static int cardCzar;
+    public static int numPlayers;
+    public static int currentCardCzar;
+    public static int currentPlayer;
     public static int winningPlayer;
 
     /**
@@ -29,10 +30,10 @@ public class Game
     {
         //players.get(cardCzar).toggleIsCardCzar();
         //if we are keeping track of the Card Czar with the int, we really don't need to have a field for it within the player class
-        if (cardCzar < numPlayers - 1)
-            cardCzar++;
+        if (currentCardCzar < numPlayers - 1)
+            currentCardCzar++;
         else
-            cardCzar = 0;
+            currentCardCzar = 0;
     }
 
     /**
@@ -64,7 +65,7 @@ public class Game
      * This will be used to check if the game is over.
      * @return
      */
-    public static Boolean checkAwesomePoint()
+    public static Boolean checkAwesomePoints()
     {
         for (int i = 0; i < numPlayers; i++)
         {

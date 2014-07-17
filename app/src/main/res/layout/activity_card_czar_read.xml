@@ -9,26 +9,23 @@
     tools:context="com.cardsagainsthumanity.app.CardCzarRead">
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imgBlackCard"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:id="@+id/imgBlackCardLarge"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/blackcard"
-        android:layout_margin="16dp" />
+        android:src="@drawable/blackcard" />
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/black_card_placeholder"
-        android:id="@+id/txtBlackCard"
-        android:layout_alignTop="@+id/imgBlackCard"
-        android:layout_alignLeft="@+id/imgBlackCard"
-        android:layout_alignRight="@+id/imgBlackCard"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginRight="16dp" />
+        android:id="@+id/txtBlackCardLarge"
+        android:layout_alignTop="@+id/imgBlackCardLarge"
+        android:layout_alignLeft="@+id/imgBlackCardLarge"
+        android:layout_alignRight="@+id/imgBlackCardLarge"
+        android:layout_margin="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,12 +33,10 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/black_card_prompt"
         android:id="@+id/txtPrompt"
-        android:layout_alignLeft="@+id/imgBlackCard"
-        android:layout_alignRight="@+id/imgBlackCard"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_alignBottom="@+id/imgBlackCard"
-        android:gravity="center"
-        android:layout_marginBottom="8dp" />
+        android:layout_alignLeft="@+id/imgBlackCardLarge"
+        android:layout_alignRight="@+id/imgBlackCardLarge"
+        android:layout_below="@+id/imgBlackCardLarge"
+        android:layout_marginTop="8dp"
+        android:gravity="center" />
 
 </RelativeLayout>

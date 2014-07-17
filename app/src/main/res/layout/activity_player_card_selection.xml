@@ -9,36 +9,46 @@
     tools:context="com.cardsagainsthumanity.app.PlayerCardSelection">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imgBlackCard"
+        android:layout_width="96dp"
+        android:layout_height="128dp"
+        android:id="@+id/imgBlackCardSmall"
         android:src="@drawable/blackcard"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_rowSpan="4"
-        android:layout_columnSpan="4"
-        android:layout_gravity="fill"
-        android:adjustViewBounds="true"
-        android:maxHeight="128dip"
-        android:maxWidth="96dip"
-        android:longClickable="false" />
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true" />
 
     <TextView
         android:text="@string/text_current_player_number"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_row="0"
-        android:layout_column="5"
-        android:layout_columnSpan="3"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="left"
-        android:id="@+id/txtCurrentPlayerNum" />
+        android:id="@+id/txtCurrentPlayerNum"
+        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/imgBlackCardSmall"
+        android:layout_alignTop="@+id/imgBlackCardSmall"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_vertical" />
 
     <TextView
         android:text="@string/text_current_player_points"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_row="2"
-        android:layout_column="5"
-        android:layout_columnSpan="3"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="left"
-        android:id="@+id/txtCurrentPlayerPoints" />
+        android:id="@+id/txtCurrentPlayerPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_vertical"
+        android:layout_alignBottom="@+id/imgBlackCardSmall"
+        android:layout_toRightOf="@+id/imgBlackCardSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/white_card_prompt"
+        android:id="@+id/txtPrompt"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false" />
 
 </RelativeLayout>
