@@ -13,6 +13,7 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -46,6 +47,11 @@
         <activity
             android:name="com.cardsagainsthumanity.app.CardCzarRead"
             android:label="@string/title_activity_card_czar_read"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.PlayerCardSelection"
+            android:label="@string/title_activity_player_card_selection"
             android:screenOrientation="portrait" >
         </activity>
     </application>

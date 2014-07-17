@@ -3,12 +3,14 @@
 
     <string name="app_name">Cards Against Humanity</string>
     <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
     <string name="button_play_game">Play Game</string>
     <string name="button_how_to_play">How To Play</string>
     <string name="button_dirty_deck">\"Dirty\" Deck</string>
     <string name="button_clean_deck">\"Clean\" Deck</string>
     <string name="button_create_game">Create Game</string>
-    <string name="black_card_placeholder">In an attempt to reach a wider audience, the Smithsonian Museum of Natural History has opened an interactive exhibit on _____</string>
+    <string name="black_card_placeholder">Black Card Text Goes Here</string>
+    <string name="black_card_prompt">Tap the card to continue.</string>
     <string name="spinner_num_players">Choose the number of players</string>
     <string name="spinner_max_awesome_points">Choose the maximum number of Awesome Points</string>
     <string name="text_dirty_deck">Full, uncensored card deck. Must be 18+.</string>
@@ -52,6 +54,6 @@
     </string-array>
 
     <string name="title_activity_card_czar_read">Card Czar Read</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_player_card_selection">Player Card Selection</string>
 
 </resources>
