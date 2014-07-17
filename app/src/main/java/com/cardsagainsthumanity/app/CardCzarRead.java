@@ -53,7 +53,7 @@ public class CardCzarRead extends Activity
 
     public void onBlackCardClick()
     {
-        ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCard);
+        final ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCard);
 
         blackCard.setOnClickListener(new View.OnClickListener()
         {
