@@ -70,88 +70,265 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true" />
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="8dp"/>
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView2"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView"/>
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView3"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard"
+                    android:layout_alignTop="@+id/imageView"
+                    android:layout_alignLeft="@+id/imageView"
+                    android:layout_alignRight="@+id/imageView"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView4"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView3"/>
+            </FrameLayout>
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView5"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView4"/>
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView6"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView5"/>
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView2"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView7"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView6"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard2"
+                    android:layout_alignTop="@+id/imageView2"
+                    android:layout_alignLeft="@+id/imageView2"
+                    android:layout_alignRight="@+id/imageView2"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
 
-            <ImageView
-                android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView8"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView7"/>
+            </FrameLayout>
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView9"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView8"/>
+                android:layout_height="wrap_content">
 
-            <ImageView
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView3"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard3"
+                    android:layout_alignTop="@+id/imageView3"
+                    android:layout_alignLeft="@+id/imageView3"
+                    android:layout_alignRight="@+id/imageView3"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:layout_width="268dp"
-                android:layout_height="338dp"
-                android:id="@+id/imageView10"
-                android:src="@drawable/whitecard"
-                android:adjustViewBounds="true"
-                android:layout_alignRight="@id/imageView9"/>
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard4"
+                    android:layout_alignTop="@+id/imageView4"
+                    android:layout_alignLeft="@+id/imageView4"
+                    android:layout_alignRight="@+id/imageView4"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView5"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard5"
+                    android:layout_alignTop="@+id/imageView5"
+                    android:layout_alignLeft="@+id/imageView5"
+                    android:layout_alignRight="@+id/imageView5"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView6"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard6"
+                    android:layout_alignTop="@+id/imageView6"
+                    android:layout_alignLeft="@+id/imageView6"
+                    android:layout_alignRight="@+id/imageView6"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView7"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard7"
+                    android:layout_alignTop="@+id/imageView7"
+                    android:layout_alignLeft="@+id/imageView7"
+                    android:layout_alignRight="@+id/imageView7"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView8"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard8"
+                    android:layout_alignTop="@+id/imageView8"
+                    android:layout_alignLeft="@+id/imageView8"
+                    android:layout_alignRight="@+id/imageView8"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView9"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard9"
+                    android:layout_alignTop="@+id/imageView9"
+                    android:layout_alignLeft="@+id/imageView9"
+                    android:layout_alignRight="@+id/imageView9"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="268dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_height="268dp"
+                    android:layout_width="338dp"
+                    android:id="@+id/imageView10"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtWhiteCard10"
+                    android:layout_alignTop="@+id/imageView10"
+                    android:layout_alignLeft="@+id/imageView10"
+                    android:layout_alignRight="@+id/imageView10"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="77dp"
+                    android:width="200dp"/>
+
+            </FrameLayout>
 
         </LinearLayout>
 
