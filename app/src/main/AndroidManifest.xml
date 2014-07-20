@@ -54,6 +54,10 @@
             android:label="@string/title_activity_player_card_selection"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.CardCzarSelect"
+            android:label="@string/title_activity_card_czar_select" >
+        </activity>
     </application>
 
 </manifest>
