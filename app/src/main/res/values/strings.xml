@@ -58,5 +58,6 @@
 
     <string name="title_activity_card_czar_read">Card Czar Read</string>
     <string name="title_activity_player_card_selection">Player Card Selection</string>
+    <string name="title_activity_card_czar_select">CardCzarSelect</string>
 
 </resources>
