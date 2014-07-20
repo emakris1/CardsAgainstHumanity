@@ -33,10 +33,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/black_card_prompt"
         android:id="@+id/txtPrompt"
-        android:layout_alignLeft="@+id/imgBlackCardLarge"
-        android:layout_alignRight="@+id/imgBlackCardLarge"
-        android:layout_below="@+id/imgBlackCardLarge"
         android:layout_marginTop="8dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

@@ -70,48 +70,49 @@ public class PlayerCardSelection extends Activity
         points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
     }
 
-    public void displayWhiteCardText(){
+    public void displayWhiteCardText()
+    {
+        TextView text;
 
-        TextView text = (TextView) findViewById(R.id.txtWhiteCard);
-        text.setText(Game.players.get(0).getPlayerCards().get(0).getText());
+        text = (TextView) findViewById(R.id.txtWhiteCard1);
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(0).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard2);
-        text.setText(Game.players.get(0).getPlayerCards().get(1).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(1).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard3);
-        text.setText(Game.players.get(0).getPlayerCards().get(2).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(2).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard4);
-        text.setText(Game.players.get(0).getPlayerCards().get(3).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(3).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard5);
-        text.setText(Game.players.get(0).getPlayerCards().get(4).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(4).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard6);
-        text.setText(Game.players.get(0).getPlayerCards().get(5).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(5).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard7);
-        text.setText(Game.players.get(0).getPlayerCards().get(6).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(6).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard8);
-        text.setText(Game.players.get(0).getPlayerCards().get(7).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(7).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard9);
-        text.setText(Game.players.get(0).getPlayerCards().get(8).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(8).getText());
         text.setTextColor(Color.BLACK);
 
         text = (TextView) findViewById(R.id.txtWhiteCard10);
-        text.setText(Game.players.get(0).getPlayerCards().get(9).getText());
+        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(9).getText());
         text.setTextColor(Color.BLACK);
-
     }
 
 }
