@@ -26,7 +26,10 @@
     <string name="title_activity_how_to_play">How To Play</string>
     <string name="title_activity_version_selection">Version Selection</string>
     <string name="title_activity_game_setup">Game Setup</string>
-    <string name="white_card_placeholder">White Card Text Goes Here</string>
+    <string name="title_activity_card_czar_read">Card Czar Read</string>
+    <string name="title_activity_player_card_selection">Player Card Selection</string>
+    <string name="title_activity_card_czar_select">CardCzarSelect</string>
+    <string name="white_card_placeholder">This is an example of a really really really really really long White Card</string>
     <string name="white_card_prompt">Long press your card(s) to submit them.</string>
     <string name="HTP_placeholder1">1. To start the game, each player draws ten White Cards.</string>
     <string name="HTP_placeholder2">2. Player 1 goes first. The order is determined by the players.</string>
@@ -47,6 +50,7 @@
         <item>7</item>
         <item>8</item>
     </string-array>
+
     <string-array name="array_max_awesome_points">
         <item>1</item>
         <item>2</item>
@@ -57,9 +61,5 @@
         <item>7</item>
         <item>8</item>
     </string-array>
-
-    <string name="title_activity_card_czar_read">Card Czar Read</string>
-    <string name="title_activity_player_card_selection">Player Card Selection</string>
-    <string name="title_activity_card_czar_select">CardCzarSelect</string>
 
 </resources>

@@ -121,7 +121,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
-        android:layout_marginTop="8dp"
         android:layout_above="@+id/txtPlayerPrompt">
 
         <LinearLayout
@@ -129,21 +128,23 @@
             android:layout_height="wrap_content">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard1"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard1"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:focusableInTouchMode="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -159,28 +160,26 @@
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false"
-                    android:width="250dp" />
-
+                    android:layout_alignParentStart="false" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard2"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard2"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -193,32 +192,26 @@
                     android:layout_alignRight="@+id/imgWhiteCard2"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-<<<<<<< HEAD
-                    android:layout_margin="12dp"
-                    android:width="250dp" />
-=======
                     android:layout_margin="12dp"/>
->>>>>>> origin/master
-
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard3"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard3"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -231,31 +224,26 @@
                     android:layout_alignRight="@+id/imgWhiteCard3"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-<<<<<<< HEAD
-                    android:layout_margin="12dp"
-                    android:width="250dp" />
-=======
                     android:layout_margin="12dp"/>
->>>>>>> origin/master
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard4"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard4"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -268,31 +256,26 @@
                     android:layout_alignRight="@+id/imgWhiteCard4"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-<<<<<<< HEAD
-                    android:layout_margin="12dp"
-                    android:width="250dp" />
-=======
                     android:layout_margin="12dp"/>
->>>>>>> origin/master
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard5"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard5"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -305,27 +288,27 @@
                     android:layout_alignRight="@+id/imgWhiteCard5"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp"
-                    android:width="250dp" />
+                    android:layout_margin="12dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard6"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard6"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -338,27 +321,26 @@
                     android:layout_alignRight="@+id/imgWhiteCard6"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp"
-                    android:width="250dp" />
+                    android:layout_margin="12dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard7"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard7"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -375,22 +357,22 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard8"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard8"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -407,22 +389,22 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard9"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard9"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -439,22 +421,23 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_width="250dp"
+                android:layout_height="333dp"
                 android:id="@+id/RLCard10"
-                android:layout_marginBottom="8dp">
+                android:layout_margin="8dp">
 
                 <ImageView
-                    android:layout_height="333dp"
-                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
                     android:id="@+id/imgWhiteCard10"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="match_parent"
