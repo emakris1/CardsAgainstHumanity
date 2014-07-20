@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="400dp"
-        android:id="@+id/imgBlackCardLarge"
+        android:id="@+id/imgCZBlackCardLarge"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/blackcard" />
@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/black_card_placeholder"
-        android:id="@+id/txtBlackCardLarge"
-        android:layout_alignTop="@+id/imgBlackCardLarge"
-        android:layout_alignLeft="@+id/imgBlackCardLarge"
-        android:layout_alignRight="@+id/imgBlackCardLarge"
+        android:id="@+id/txtCZBlackCardLarge"
+        android:layout_alignTop="@+id/imgCZBlackCardLarge"
+        android:layout_alignLeft="@+id/imgCZBlackCardLarge"
+        android:layout_alignRight="@+id/imgCZBlackCardLarge"
         android:layout_margin="16dp" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/black_card_prompt"
-        android:id="@+id/txtPrompt"
+        android:id="@+id/txtCZPrompt"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"

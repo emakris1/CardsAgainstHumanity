@@ -1,5 +1,6 @@
 package com.cardsagainsthumanity.app;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,15 +18,17 @@ import android.graphics.Color;
 
 public class PlayerCardSelection extends Activity
 {
+    private ViewGroup.LayoutParams lpOriginal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_card_selection);
-        displayWhiteCardText();
         onBlackCardClick();
         setPlayerInfo();
+        displayWhiteCardText();
+        onWhiteCardLongPress();
     }
 
 
@@ -50,14 +54,42 @@ public class PlayerCardSelection extends Activity
 
     public void onBlackCardClick()
     {
-        final ImageView blackCard = (ImageView) findViewById(R.id.imgBlackCardSmall);
+        final ImageView imgBlackCardSmall = (ImageView) findViewById(R.id.imgPlayerBlackCardSmall);
+        final TextView txtBlackCardSmall = (TextView) findViewById(R.id.txtPlayerBlackCardSmall);
+        final ImageView imgBlackCardLarge = (ImageView) findViewById(R.id.imgPlayerBlackCardLarge);
+        final TextView txtBlackCardLarge = (TextView) findViewById(R.id.txtPlayerBlackCardLarge);
+        final TextView txtCurrentPlayer = (TextView) findViewById(R.id.txtCurrentPlayerNum);
+        final TextView txtCurrentPoints = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
+        final TextView txtSubmitted = (TextView) findViewById(R.id.txtSubmittedCards);
 
-        blackCard.setOnClickListener(new View.OnClickListener()
+        imgBlackCardSmall.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                CharSequence text = "When the Black Card is clicked, a full screen image of the card will appear.";
-                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+                imgBlackCardSmall.setVisibility(View.GONE);
+                txtBlackCardSmall.setVisibility(View.GONE);
+                txtCurrentPlayer.setVisibility(View.GONE);
+                txtCurrentPoints.setVisibility(View.GONE);
+                txtSubmitted.setVisibility(View.GONE);
+                imgBlackCardLarge.setVisibility(View.VISIBLE);
+                txtBlackCardLarge.setVisibility(View.VISIBLE);
+                txtBlackCardLarge.setText(Game.currentBlackCard.getText());
+
+            }
+        });
+
+        imgBlackCardLarge.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                imgBlackCardSmall.setVisibility(View.VISIBLE);
+                txtBlackCardSmall.setVisibility(View.VISIBLE);
+                txtCurrentPlayer.setVisibility(View.VISIBLE);
+                txtCurrentPoints.setVisibility(View.VISIBLE);
+                txtSubmitted.setVisibility(View.VISIBLE);
+                imgBlackCardLarge.setVisibility(View.GONE);
+                txtBlackCardLarge.setVisibility(View.GONE);
+
             }
         });
     }
@@ -66,8 +98,10 @@ public class PlayerCardSelection extends Activity
     {
         TextView player = (TextView) findViewById(R.id.txtCurrentPlayerNum);
         TextView points = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
+        TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
         player.setText("Player: " + (Game.currentPlayer + 1));
         points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
+        submitted.setText("Submit Cards: " + Game.getCurrentBlackCard().getNumPrompts());
     }
 
     public void displayWhiteCardText()
@@ -113,6 +147,11 @@ public class PlayerCardSelection extends Activity
         text = (TextView) findViewById(R.id.txtWhiteCard10);
         text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(9).getText());
         text.setTextColor(Color.BLACK);
+    }
+
+    public void onWhiteCardLongPress()
+    {
+        
     }
 
 }

@@ -11,20 +11,67 @@
     <ImageView
         android:layout_width="96dp"
         android:layout_height="120dp"
-        android:id="@+id/imgBlackCardSmall"
+        android:id="@+id/imgPlayerBlackCardSmall"
         android:src="@drawable/blackcard"
         android:scaleType="fitCenter"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/black_card_expand"
+        android:id="@+id/txtPlayerBlackCardSmall"
+        android:layout_alignTop="@+id/imgPlayerBlackCardSmall"
+        android:layout_alignRight="@+id/imgPlayerBlackCardSmall"
+        android:layout_alignEnd="@+id/imgPlayerBlackCardSmall"
+        android:layout_alignLeft="@+id/imgPlayerBlackCardSmall"
+        android:textIsSelectable="false"
+        android:enabled="false"
+        android:layout_margin="4dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:gravity="center"
+        android:layout_alignBottom="@+id/imgPlayerBlackCardSmall"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/imgPlayerBlackCardLarge"
+        android:src="@drawable/blackcard"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/black_card_placeholder"
+        android:id="@+id/txtPlayerBlackCardLarge"
+        android:layout_alignTop="@+id/imgPlayerBlackCardLarge"
+        android:layout_alignLeft="@+id/imgPlayerBlackCardLarge"
+        android:layout_alignRight="@+id/imgPlayerBlackCardLarge"
+        android:layout_margin="12dp"
+        android:visibility="gone" />
 
     <TextView
         android:text="@string/text_current_player_number"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="left"
         android:id="@+id/txtCurrentPlayerNum"
-        android:layout_height="64dp"
+        android:layout_height="40dp"
         android:layout_width="wrap_content"
-        android:layout_toRightOf="@+id/imgBlackCardSmall"
-        android:layout_alignTop="@+id/imgBlackCardSmall"
+        android:layout_toRightOf="@+id/imgPlayerBlackCardSmall"
+        android:layout_alignTop="@+id/imgPlayerBlackCardSmall"
         android:layout_marginLeft="32dp"
         android:gravity="center_vertical" />
 
@@ -34,18 +81,29 @@
         android:layout_gravity="left"
         android:id="@+id/txtCurrentPlayerPoints"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="32dp"
         android:gravity="center_vertical"
-        android:layout_alignBottom="@+id/imgBlackCardSmall"
-        android:layout_toRightOf="@+id/imgBlackCardSmall" />
+        android:layout_toRightOf="@+id/imgPlayerBlackCardSmall"
+        android:layout_below="@+id/txtCurrentPlayerNum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/text_current_submitted_cards"
+        android:id="@+id/txtSubmittedCards"
+        android:layout_below="@+id/txtCurrentPlayerPoints"
+        android:layout_toRightOf="@+id/imgPlayerBlackCardSmall"
+        android:layout_marginLeft="32dp"
+        android:gravity="center_vertical" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/white_card_prompt"
-        android:id="@+id/txtPrompt"
+        android:id="@+id/txtPlayerPrompt"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="false"
@@ -63,8 +121,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
-        android:layout_below="@+id/imgBlackCardSmall"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:layout_above="@+id/txtPlayerPrompt">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,7 +146,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -101,7 +159,8 @@
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false" />
+                    android:layout_alignParentStart="false"
+                    android:width="250dp" />
 
             </RelativeLayout>
 
@@ -124,7 +183,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -134,7 +193,8 @@
                     android:layout_alignRight="@+id/imgWhiteCard2"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:width="250dp" />
 
             </RelativeLayout>
 
@@ -157,7 +217,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -167,7 +227,8 @@
                     android:layout_alignRight="@+id/imgWhiteCard3"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:width="250dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -189,7 +250,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -199,7 +260,8 @@
                     android:layout_alignRight="@+id/imgWhiteCard4"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:width="250dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -221,7 +283,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -231,7 +293,8 @@
                     android:layout_alignRight="@+id/imgWhiteCard5"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:width="250dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -253,7 +316,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -263,7 +326,8 @@
                     android:layout_alignRight="@+id/imgWhiteCard6"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"
+                    android:width="250dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -285,7 +349,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -317,7 +381,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -349,7 +413,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
@@ -381,7 +445,7 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
