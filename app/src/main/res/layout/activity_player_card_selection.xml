@@ -134,7 +134,7 @@
                     android:layout_alignRight="@+id/imgWhiteCard2"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"/>
 
             </RelativeLayout>
 
@@ -167,7 +167,7 @@
                     android:layout_alignRight="@+id/imgWhiteCard3"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -199,7 +199,7 @@
                     android:layout_alignRight="@+id/imgWhiteCard4"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:layout_margin="12dp"/>
             </RelativeLayout>
 
             <RelativeLayout
