@@ -16,7 +16,8 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:cropToPadding="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
         android:layout_alignParentStart="false"
         android:gravity="center"
         android:layout_alignBottom="@+id/imgPlayerBlackCardSmall"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="match_parent"
