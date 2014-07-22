@@ -79,7 +79,7 @@ public class GameSetup extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("Player 1 is now the Card Czar. Please pass the device to him or her.");
+        dialogBuilder.setMessage("Player " + (Game.currentCardCzar + 1) + " is now the Card Czar. Please pass the device to him or her.");
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -158,14 +158,15 @@ public class GameSetup extends Activity
 
         for (int i = 0; i < Game.numPlayers; i++)
         {
-            Player temp = new Player(i);
+            Player tmpPlayer = new Player(i);
             for (int j = 0; j < 10; j++)
             {
-                temp.addPlayerCard(Game.whiteDeck.removeFirst());
-                temp.getPlayerCards().get(j).setOwner(j);
+                WhiteCard tmpCard = Game.whiteDeck.remove();
+                tmpCard.setOwner(j);
+                tmpPlayer.addPlayerCard(tmpCard);
             }
 
-            Game.players.add(temp);
+            Game.players.add(tmpPlayer);
             Game.currentCardCzar = 0;
             Game.currentPlayer = 1;
         }

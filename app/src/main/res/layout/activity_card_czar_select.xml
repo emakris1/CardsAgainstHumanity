@@ -91,7 +91,6 @@
                     android:layout_alignTop="@+id/imgSubWhiteCard1"
                     android:layout_alignLeft="@+id/imgSubWhiteCard1"
                     android:layout_alignRight="@+id/imgSubWhiteCard1"
-                    android:enabled="false"
                     android:layout_margin="12dp"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"

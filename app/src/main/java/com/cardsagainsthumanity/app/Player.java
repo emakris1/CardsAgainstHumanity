@@ -25,6 +25,8 @@ public class Player
 
     public ArrayList<WhiteCard> getPlayerCards() {return this.playerCards;}
 
+    public WhiteCard getPlayerCard(int index) {return this.playerCards.get(index);}
+
     public void incAwesomePoints() {this.numAwesomePoints++;}
 
     public void addPlayerCard(WhiteCard card) {playerCards.add(card);}
@@ -34,7 +36,7 @@ public class Player
      * @param index
      * @return WhiteCard
      */
-    public WhiteCard pickWhiteCard(int index) {return this.playerCards.remove(index);}
+    public WhiteCard removePlayerCard(int index){return this.playerCards.remove(index);}
 
 }
 

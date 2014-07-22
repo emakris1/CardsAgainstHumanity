@@ -156,7 +156,6 @@
                     android:layout_alignTop="@+id/imgWhiteCard1"
                     android:layout_alignLeft="@+id/imgWhiteCard1"
                     android:layout_alignRight="@+id/imgWhiteCard1"
-                    android:enabled="false"
                     android:layout_margin="12dp"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"

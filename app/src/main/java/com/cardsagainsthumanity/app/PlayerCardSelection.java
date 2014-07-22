@@ -1,15 +1,14 @@
 package com.cardsagainsthumanity.app;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -17,10 +16,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Color;
 
+import java.util.ArrayList;
+
 
 public class PlayerCardSelection extends Activity
 {
-    private ViewGroup.LayoutParams lpOriginal;
+
+    ArrayList<WhiteCard> cardsToSubmit = new ArrayList<WhiteCard>();
+    int numCardsSubmitted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -60,6 +63,7 @@ public class PlayerCardSelection extends Activity
         final TextView txtBlackCardSmall = (TextView) findViewById(R.id.txtPlayerBlackCardSmall);
         final ImageView imgBlackCardLarge = (ImageView) findViewById(R.id.imgPlayerBlackCardLarge);
         final TextView txtBlackCardLarge = (TextView) findViewById(R.id.txtPlayerBlackCardLarge);
+
         final TextView txtCurrentPlayer = (TextView) findViewById(R.id.txtCurrentPlayerNum);
         final TextView txtCurrentPoints = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
         final TextView txtSubmitted = (TextView) findViewById(R.id.txtSubmittedCards);
@@ -103,7 +107,7 @@ public class PlayerCardSelection extends Activity
         TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
         player.setText("Player: " + (Game.currentPlayer + 1));
         points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
-        submitted.setText("Submit Cards: " + Game.getCurrentBlackCard().getNumPrompts());
+        submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
     }
 
     public void displayWhiteCardText()
@@ -116,26 +120,47 @@ public class PlayerCardSelection extends Activity
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
             rl.setVisibility(View.VISIBLE);
             TextView tv = (TextView) rl.getChildAt(1);
-            tv.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(i).getText());
+            tv.setText(Game.players.get(Game.currentPlayer).getPlayerCard(i).getText());
             tv.setTextColor(Color.BLACK);
         }
     }
 
     public void onWhiteCardLongPress()
     {
+        // Get every White Card inside of the HorizontalScrollView and add a long click event
+        // listener that submits the selected card and disables it.
         LinearLayout ll = (LinearLayout) findViewById(R.id.LLPlayerCards);
+        final TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
         for (int i = 0; i < ll.getChildCount(); i++)
         {
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
-            ImageView iv = (ImageView) rl.getChildAt(0);
-            if (iv != null)
+            final ImageView imgWhiteCard = (ImageView) rl.getChildAt(0);
+            final TextView txtWhiteCard = (TextView) rl.getChildAt(1);
+            final int index = i;    // white card index
+            if (imgWhiteCard != null)
             {
-                iv.setOnLongClickListener(new View.OnLongClickListener()
+                imgWhiteCard.setOnLongClickListener(new View.OnLongClickListener()
                 {
                     @Override
                     public boolean onLongClick(View view)
                     {
+                        cardsToSubmit.add(Game.players.get(Game.currentPlayer).removePlayerCard(index));
+                        numCardsSubmitted++;
+
+                        imgWhiteCard.setEnabled(false);
+                        imgWhiteCard.setImageAlpha(50);
+
+                        txtWhiteCard.setEnabled(false);
+                        txtWhiteCard.setTextColor(Color.GRAY);
+
                         showToast("Card Submitted!");
+                        submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
+
+                        if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
+                        {
+                            //Game.submittedCards.add(cardsToSubmit);
+                            showCardCzarDialog();
+                        }
                         return true;
                     }
                 });
@@ -151,6 +176,40 @@ public class PlayerCardSelection extends Activity
 
         Toast toast = Toast.makeText(context, cs, duration);
         toast.show();
+    }
+
+    public void showPlayerDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Switch to Player");
+        dialogBuilder.setMessage("It is now Player " + (Game.currentPlayer + 1) + "'s turn. Please pass the device to him or her.");
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+    }
+
+    public void showCardCzarDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Switch to Card Czar");
+        dialogBuilder.setMessage("It is now the Card Czar's turn (Player " + (Game.currentCardCzar + 1) + "). Please pass the device to him or her.");
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                startActivity(new Intent(getApplicationContext(), CardCzarSelect.class));
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
     }
 
 }
