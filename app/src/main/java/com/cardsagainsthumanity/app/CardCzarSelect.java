@@ -6,8 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * There are 24 card images in the Linear Layout; not all of them will have a submitted white card associated with them
@@ -20,6 +23,7 @@ public class CardCzarSelect extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_select);
+        displaySubmittedCardText();
     }
 
 
@@ -44,439 +48,32 @@ public class CardCzarSelect extends Activity {
     }
 
     public void displaySubmittedCardText(){
-        int i = 0;
+
+        ArrayList<RelativeLayout> rl = new ArrayList<RelativeLayout>();
+        ArrayList<TextView> temp = new ArrayList<TextView>();
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
+
+        for(int i = 0; i < 24; i++){
+            rl.add((RelativeLayout) linearLayout.getChildAt(i));
+            RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);   //I tried doing the TextView on one line,
+            temp.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
+        }
+
+        for(int i = 0; i < 24; i++){
+            rl.get(i).setVisibility(View.VISIBLE);
+        }
+
+        for(int i = 23; i >= Game.getCurrentBlackCard().getNumPrompts()*Game.numPlayers; i--){
+            rl.get(i).setVisibility(View.GONE);
+        }
+
         int k = 0;
-        int j = 0;
 
-        TextView temp = (TextView) findViewById(R.id.txtSubWhiteCard1);
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.RLSubCard1);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
+        for(int i = 0; i < Game.numPlayers; i++) {
+            for(int j = 0; j < Game.getCurrentBlackCard().getNumPrompts(); j++){
+                temp.get(k).setText(Game.submittedCards.get(i).get(j).getText());
+                k++;
             }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard2);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard2);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard3);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard3);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard4);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard4);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard5);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard5);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard6);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard6);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard7);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard7);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard8);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard8);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard9);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard9);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard10);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard10);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard11);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard11);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard12);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard12);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard13);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard13);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard14);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard14);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard15);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard15);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard16);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard16);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard17);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard17);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard18);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard18);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard19);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard19);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard20);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard20);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard21);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard21);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard22);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard22);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard23);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard23);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
-        }
-
-        j++;
-        temp = (TextView) findViewById(R.id.txtSubWhiteCard24);
-        rl = (RelativeLayout) findViewById(R.id.RLSubCard24);
-
-        if(j < Game.numPlayers*Game.getCurrentBlackCard().getNumPrompts()){
-            temp.setText(Game.submittedCards.get(i).get(k).getText());
-            k++;
-
-            if(k == Game.getCurrentBlackCard().getNumPrompts()){
-                k = 0;
-                i++;
-            }
-        }
-
-        else{
-            rl.setVisibility(View.GONE);
         }
     }
 

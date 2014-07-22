@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Color;
@@ -106,52 +108,49 @@ public class PlayerCardSelection extends Activity
 
     public void displayWhiteCardText()
     {
-        TextView text;
-
-        text = (TextView) findViewById(R.id.txtWhiteCard1);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(0).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard2);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(1).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard3);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(2).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard4);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(3).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard5);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(4).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard6);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(5).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard7);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(6).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard8);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(7).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard9);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(8).getText());
-        text.setTextColor(Color.BLACK);
-
-        text = (TextView) findViewById(R.id.txtWhiteCard10);
-        text.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(9).getText());
-        text.setTextColor(Color.BLACK);
+        // Get every White Card inside of the HorizontalScrollView, make then visible, set
+        // their text to correspond to the current player's cards, and make the text black.
+        LinearLayout ll = (LinearLayout) findViewById(R.id.LLPlayerCards);
+        for (int i = 0; i < ll.getChildCount(); i++)
+        {
+            RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
+            rl.setVisibility(View.VISIBLE);
+            TextView tv = (TextView) rl.getChildAt(1);
+            tv.setText(Game.players.get(Game.currentPlayer).getPlayerCards().get(i).getText());
+            tv.setTextColor(Color.BLACK);
+        }
     }
 
     public void onWhiteCardLongPress()
     {
-        
+        LinearLayout ll = (LinearLayout) findViewById(R.id.LLPlayerCards);
+        for (int i = 0; i < ll.getChildCount(); i++)
+        {
+            RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
+            ImageView iv = (ImageView) rl.getChildAt(0);
+            if (iv != null)
+            {
+                iv.setOnLongClickListener(new View.OnLongClickListener()
+                {
+                    @Override
+                    public boolean onLongClick(View view)
+                    {
+                        showToast("Card Submitted!");
+                        return true;
+                    }
+                });
+            }
+        }
+    }
+
+    public void showToast(CharSequence text)
+    {
+        Context context = getApplicationContext();
+        CharSequence cs = text;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, cs, duration);
+        toast.show();
     }
 
 }

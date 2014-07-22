@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:id="@+id/imgPlayerBlackCardLarge"
+        android:id="@+id/imgCZBlackCardLarge"
         android:src="@drawable/blackcard"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
@@ -26,11 +26,22 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/black_card_placeholder"
-        android:id="@+id/txtPlayerBlackCardLarge"
-        android:layout_alignTop="@+id/imgPlayerBlackCardLarge"
-        android:layout_alignLeft="@+id/imgPlayerBlackCardLarge"
-        android:layout_alignRight="@+id/imgPlayerBlackCardLarge"
+        android:id="@+id/txtCZBlackCardLarge"
+        android:layout_alignTop="@+id/imgCZBlackCardLarge"
+        android:layout_alignLeft="@+id/imgCZBlackCardLarge"
+        android:layout_alignRight="@+id/imgCZBlackCardLarge"
         android:layout_margin="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/white_card_cz_select_prompt"
+        android:id="@+id/txtCZSelectPrompt"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false" />
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
@@ -44,23 +55,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentTop="false"
-        android:layout_below="@+id/imgPlayerBlackCardLarge"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:layout_above="@+id/txtCZSelectPrompt">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/LLCardCzarSelect">
 
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard1"
+                android:id="@+id/RLSubCard1"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard1"
+                    android:id="@+id/imgSubWhiteCard1"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:focusableInTouchMode="false"
@@ -75,10 +87,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard1"
-                    android:layout_alignTop="@+id/imgWhiteCard1"
-                    android:layout_alignLeft="@+id/imgWhiteCard1"
-                    android:layout_alignRight="@+id/imgWhiteCard1"
+                    android:id="@+id/txtSubWhiteCard1"
+                    android:layout_alignTop="@+id/imgSubWhiteCard1"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard1"
+                    android:layout_alignRight="@+id/imgSubWhiteCard1"
                     android:enabled="false"
                     android:layout_margin="12dp"
                     android:layout_alignParentLeft="false"
@@ -90,13 +102,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard2"
+                android:id="@+id/RLSubCard2"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard2"
+                    android:id="@+id/imgSubWhiteCard2"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -110,10 +122,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard2"
-                    android:layout_alignTop="@+id/imgWhiteCard2"
-                    android:layout_alignLeft="@+id/imgWhiteCard2"
-                    android:layout_alignRight="@+id/imgWhiteCard2"
+                    android:id="@+id/txtSubWhiteCard2"
+                    android:layout_alignTop="@+id/imgSubWhiteCard2"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard2"
+                    android:layout_alignRight="@+id/imgSubWhiteCard2"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp"/>
@@ -122,13 +134,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard3"
+                android:id="@+id/RLSubCard3"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard3"
+                    android:id="@+id/imgSubWhiteCard3"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -142,10 +154,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard3"
-                    android:layout_alignTop="@+id/imgWhiteCard3"
-                    android:layout_alignLeft="@+id/imgWhiteCard3"
-                    android:layout_alignRight="@+id/imgWhiteCard3"
+                    android:id="@+id/txtSubWhiteCard3"
+                    android:layout_alignTop="@+id/imgSubWhiteCard3"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard3"
+                    android:layout_alignRight="@+id/imgSubWhiteCard3"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp"/>
@@ -154,13 +166,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard4"
+                android:id="@+id/RLSubCard4"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard4"
+                    android:id="@+id/imgSubWhiteCard4"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -174,10 +186,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard4"
-                    android:layout_alignTop="@+id/imgWhiteCard4"
-                    android:layout_alignLeft="@+id/imgWhiteCard4"
-                    android:layout_alignRight="@+id/imgWhiteCard4"
+                    android:id="@+id/txtSubWhiteCard4"
+                    android:layout_alignTop="@+id/imgSubWhiteCard4"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard4"
+                    android:layout_alignRight="@+id/imgSubWhiteCard4"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp"/>
@@ -186,13 +198,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard5"
+                android:id="@+id/RLSubCard5"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard5"
+                    android:id="@+id/imgSubWhiteCard5"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -206,10 +218,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard5"
-                    android:layout_alignTop="@+id/imgWhiteCard5"
-                    android:layout_alignLeft="@+id/imgWhiteCard5"
-                    android:layout_alignRight="@+id/imgWhiteCard5"
+                    android:id="@+id/txtSubWhiteCard5"
+                    android:layout_alignTop="@+id/imgSubWhiteCard5"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard5"
+                    android:layout_alignRight="@+id/imgSubWhiteCard5"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
@@ -218,13 +230,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard6"
+                android:id="@+id/RLSubCard6"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard6"
+                    android:id="@+id/imgSubWhiteCard6"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -239,10 +251,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard6"
-                    android:layout_alignTop="@+id/imgWhiteCard6"
-                    android:layout_alignLeft="@+id/imgWhiteCard6"
-                    android:layout_alignRight="@+id/imgWhiteCard6"
+                    android:id="@+id/txtSubWhiteCard6"
+                    android:layout_alignTop="@+id/imgSubWhiteCard6"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard6"
+                    android:layout_alignRight="@+id/imgSubWhiteCard6"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
@@ -251,13 +263,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard7"
+                android:id="@+id/RLSubCard7"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard7"
+                    android:id="@+id/imgSubWhiteCard7"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -271,10 +283,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard7"
-                    android:layout_alignTop="@+id/imgWhiteCard7"
-                    android:layout_alignLeft="@+id/imgWhiteCard7"
-                    android:layout_alignRight="@+id/imgWhiteCard7"
+                    android:id="@+id/txtSubWhiteCard7"
+                    android:layout_alignTop="@+id/imgSubWhiteCard7"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard7"
+                    android:layout_alignRight="@+id/imgSubWhiteCard7"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
@@ -283,13 +295,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard8"
+                android:id="@+id/RLSubCard8"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard8"
+                    android:id="@+id/imgSubWhiteCard8"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -303,10 +315,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard8"
-                    android:layout_alignTop="@+id/imgWhiteCard8"
-                    android:layout_alignLeft="@+id/imgWhiteCard8"
-                    android:layout_alignRight="@+id/imgWhiteCard8"
+                    android:id="@+id/txtSubWhiteCard8"
+                    android:layout_alignTop="@+id/imgSubWhiteCard8"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard8"
+                    android:layout_alignRight="@+id/imgSubWhiteCard8"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
@@ -315,13 +327,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard9"
+                android:id="@+id/RLSubCard9"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard9"
+                    android:id="@+id/imgSubWhiteCard9"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -335,10 +347,10 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard9"
-                    android:layout_alignTop="@+id/imgWhiteCard9"
-                    android:layout_alignLeft="@+id/imgWhiteCard9"
-                    android:layout_alignRight="@+id/imgWhiteCard9"
+                    android:id="@+id/txtSubWhiteCard9"
+                    android:layout_alignTop="@+id/imgSubWhiteCard9"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard9"
+                    android:layout_alignRight="@+id/imgSubWhiteCard9"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
@@ -347,13 +359,13 @@
             <RelativeLayout
                 android:layout_width="250dp"
                 android:layout_height="333dp"
-                android:id="@+id/RLCard10"
+                android:id="@+id/RLSubCard10"
                 android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:id="@+id/imgWhiteCard10"
+                    android:id="@+id/imgSubWhiteCard10"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="false"
                     android:layout_alignParentTop="false"
@@ -368,10 +380,472 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtWhiteCard10"
-                    android:layout_alignTop="@+id/imgWhiteCard10"
-                    android:layout_alignLeft="@+id/imgWhiteCard10"
-                    android:layout_alignRight="@+id/imgWhiteCard10"
+                    android:id="@+id/txtSubWhiteCard10"
+                    android:layout_alignTop="@+id/imgSubWhiteCard10"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard10"
+                    android:layout_alignRight="@+id/imgSubWhiteCard10"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard11"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard11"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard11"
+                    android:layout_alignTop="@+id/imgSubWhiteCard11"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard11"
+                    android:layout_alignRight="@+id/imgSubWhiteCard11"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard12"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard12"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard12"
+                    android:layout_alignTop="@+id/imgSubWhiteCard12"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard12"
+                    android:layout_alignRight="@+id/imgSubWhiteCard12"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard13"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard13"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard13"
+                    android:layout_alignTop="@+id/imgSubWhiteCard13"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard13"
+                    android:layout_alignRight="@+id/imgSubWhiteCard13"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard14"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard14"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard14"
+                    android:layout_alignTop="@+id/imgSubWhiteCard14"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard14"
+                    android:layout_alignRight="@+id/imgSubWhiteCard14"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard15"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard15"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard15"
+                    android:layout_alignTop="@+id/imgSubWhiteCard15"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard15"
+                    android:layout_alignRight="@+id/imgSubWhiteCard15"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard16"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard16"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard16"
+                    android:layout_alignTop="@+id/imgSubWhiteCard16"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard16"
+                    android:layout_alignRight="@+id/imgSubWhiteCard16"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard17"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard17"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard17"
+                    android:layout_alignTop="@+id/imgSubWhiteCard17"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard17"
+                    android:layout_alignRight="@+id/imgSubWhiteCard17"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard18"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard18"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard18"
+                    android:layout_alignTop="@+id/imgSubWhiteCard18"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard18"
+                    android:layout_alignRight="@+id/imgSubWhiteCard18"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard19"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard19"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard19"
+                    android:layout_alignTop="@+id/imgSubWhiteCard19"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard19"
+                    android:layout_alignRight="@+id/imgSubWhiteCard19"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard20"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard20"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard20"
+                    android:layout_alignTop="@+id/imgSubWhiteCard20"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard20"
+                    android:layout_alignRight="@+id/imgSubWhiteCard20"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard21"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard21"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard21"
+                    android:layout_alignTop="@+id/imgSubWhiteCard21"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard21"
+                    android:layout_alignRight="@+id/imgSubWhiteCard21"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard22"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard22"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard22"
+                    android:layout_alignTop="@+id/imgSubWhiteCard22"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard22"
+                    android:layout_alignRight="@+id/imgSubWhiteCard22"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard23"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard23"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard23"
+                    android:layout_alignTop="@+id/imgSubWhiteCard23"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard23"
+                    android:layout_alignRight="@+id/imgSubWhiteCard23"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_margin="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="333dp"
+                android:id="@+id/RLSubCard24"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard24"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard24"
+                    android:layout_alignTop="@+id/imgSubWhiteCard24"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard24"
+                    android:layout_alignRight="@+id/imgSubWhiteCard24"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_margin="12dp" />
