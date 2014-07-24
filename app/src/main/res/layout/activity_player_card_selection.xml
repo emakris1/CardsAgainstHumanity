@@ -10,14 +10,16 @@
 
     <ImageView
         android:layout_width="96dp"
-        android:layout_height="120dp"
+        android:layout_height="128dp"
         android:id="@+id/imgPlayerBlackCardSmall"
         android:src="@drawable/blackcard"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:cropToPadding="false" />
+        android:cropToPadding="false"
+        android:background="@drawable/whitecard"
+        android:padding="0.25dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,7 +42,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="128dp"
         android:id="@+id/imgPlayerBlackCardLarge"
         android:src="@drawable/blackcard"
         android:scaleType="fitXY"
@@ -50,7 +52,9 @@
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:background="@drawable/whitecard"
+        android:padding="0.25dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,8 +65,9 @@
         android:layout_alignTop="@+id/imgPlayerBlackCardLarge"
         android:layout_alignLeft="@+id/imgPlayerBlackCardLarge"
         android:layout_alignRight="@+id/imgPlayerBlackCardLarge"
-        android:layout_margin="12dp"
-        android:visibility="gone" />
+        android:layout_margin="20dp"
+        android:visibility="gone"
+        android:textStyle="bold" />
 
     <TextView
         android:text="@string/text_current_player_number"
@@ -130,8 +135,8 @@
             android:id="@+id/LLPlayerCards">
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard1"
                 android:layout_margin="8dp">
 
@@ -157,16 +162,19 @@
                     android:layout_alignTop="@+id/imgWhiteCard1"
                     android:layout_alignLeft="@+id/imgWhiteCard1"
                     android:layout_alignRight="@+id/imgWhiteCard1"
-                    android:layout_margin="12dp"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false" />
+                    android:layout_alignParentStart="false"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard2"
                 android:layout_margin="8dp">
 
@@ -193,12 +201,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard2"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp"/>
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard3"
                 android:layout_margin="8dp">
 
@@ -225,12 +236,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard3"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp"/>
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard4"
                 android:layout_margin="8dp">
 
@@ -257,12 +271,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard4"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp"/>
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard5"
                 android:layout_margin="8dp">
 
@@ -289,12 +306,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard5"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard6"
                 android:layout_margin="8dp">
 
@@ -322,12 +342,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard6"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard7"
                 android:layout_margin="8dp">
 
@@ -354,12 +377,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard7"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard8"
                 android:layout_margin="8dp">
 
@@ -386,12 +412,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard8"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard9"
                 android:layout_margin="8dp">
 
@@ -418,12 +447,15 @@
                     android:layout_alignRight="@+id/imgWhiteCard9"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="250dp"
-                android:layout_height="333dp"
+                android:layout_width="240dp"
+                android:layout_height="320dp"
                 android:id="@+id/RLCard10"
                 android:layout_margin="8dp">
 
@@ -451,7 +483,10 @@
                     android:layout_alignRight="@+id/imgWhiteCard10"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_margin="12dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp" />
             </RelativeLayout>
 
         </LinearLayout>

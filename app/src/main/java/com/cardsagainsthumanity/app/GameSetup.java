@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Spinner;
 import java.io.BufferedReader;
@@ -79,7 +80,7 @@ public class GameSetup extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("Player " + (Game.currentCardCzar + 1) + " is now the Card Czar. Please pass the device to him or her.");
+        dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -90,6 +91,10 @@ public class GameSetup extends Activity
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
     /**

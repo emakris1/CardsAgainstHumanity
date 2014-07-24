@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -119,9 +120,16 @@ public class PlayerCardSelection extends Activity
         {
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
             rl.setVisibility(View.VISIBLE);
-            TextView tv = (TextView) rl.getChildAt(1);
-            tv.setText(Game.players.get(Game.currentPlayer).getPlayerCard(i).getText());
-            tv.setTextColor(Color.BLACK);
+
+            ImageView imgWhiteCard = (ImageView) rl.getChildAt(0);
+            imgWhiteCard.setEnabled(true);
+            System.out.println(imgWhiteCard.getImageAlpha());
+            imgWhiteCard.setImageAlpha(255);
+
+            TextView txtWhiteCard = (TextView) rl.getChildAt(1);
+            txtWhiteCard.setEnabled(true);
+            txtWhiteCard.setTextColor(Color.BLACK);
+            txtWhiteCard.setText(Game.players.get(Game.currentPlayer).getPlayerCard(i).getText());
         }
     }
 
@@ -145,10 +153,9 @@ public class PlayerCardSelection extends Activity
                     public boolean onLongClick(View view)
                     {
                         cardsToSubmit.add(Game.players.get(Game.currentPlayer).removePlayerCard(index));
-                        numCardsSubmitted++;
 
                         imgWhiteCard.setEnabled(false);
-                        imgWhiteCard.setImageAlpha(50);
+                        imgWhiteCard.setImageAlpha(63);
 
                         txtWhiteCard.setEnabled(false);
                         txtWhiteCard.setTextColor(Color.GRAY);
@@ -156,7 +163,7 @@ public class PlayerCardSelection extends Activity
                         showToast("Card Submitted!");
                         submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
 
-                        if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
+                        if (++numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
                         {
                             //Game.submittedCards.add(cardsToSubmit);
                             showCardCzarDialog();
@@ -181,8 +188,8 @@ public class PlayerCardSelection extends Activity
     public void showPlayerDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Player");
-        dialogBuilder.setMessage("It is now Player " + (Game.currentPlayer + 1) + "'s turn. Please pass the device to him or her.");
+        dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
+        dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -193,13 +200,17 @@ public class PlayerCardSelection extends Activity
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
     public void showCardCzarDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("It is now the Card Czar's turn (Player " + (Game.currentCardCzar + 1) + "). Please pass the device to him or her.");
+        dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -210,6 +221,10 @@ public class PlayerCardSelection extends Activity
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
 }

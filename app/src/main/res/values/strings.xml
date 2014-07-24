@@ -9,7 +9,7 @@
     <string name="button_dirty_deck">\"Dirty\" Deck</string>
     <string name="button_clean_deck">\"Clean\" Deck</string>
     <string name="button_create_game">Create Game</string>
-    <string name="black_card_placeholder">Black Card Text Goes Here</string>
+    <string name="black_card_placeholder">In an attempt to reach a wider audience, the Smithsonian Museum of Natural History has opened an interactive exhibit on _____.</string>
     <string name="black_card_read_prompt">Tap the card to continue.</string>
     <string name="black_card_expand">View\n Black\n Card</string>
     <string name="spinner_num_players">Choose the number of players</string>
@@ -29,18 +29,18 @@
     <string name="title_activity_card_czar_read">Card Czar Read</string>
     <string name="title_activity_player_card_selection">Player Card Selection</string>
     <string name="title_activity_card_czar_select">Card Czar Selection</string>
-    <string name="white_card_placeholder">This is an example of a really really really really really long White Card</string>
+    <string name="white_card_placeholder">Saying "I disapprove of what you say, but I will defend to the death your right to say it" when you know you wouldn\'t</string>
     <string name="white_card_player_select_prompt">Long press your card(s) to submit them.</string>
     <string name="white_card_cz_select_prompt">Long press a player\'s card(s) to select them.</string>
-    <string name="HTP_placeholder1">1. To start the game, each player draws ten White Cards.</string>
-    <string name="HTP_placeholder2">2. Player 1 goes first. The order is determined by the players.</string>
-    <string name="HTP_placeholder3">3. Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.</string>
-    <string name="HTP_placeholder4">4. The Card Czar will shuffle all of the answers and shares each card combination with the group. For full effect re-read the Black Card before presenting each answer.</string>
-    <string name="HTP_placeholder5">5. The Card Czar will then select the funniest cards and whomever submitted the card receives an Awesome Point!</string>
-    <string name="HTP_placeholder6">6. After the round, a new player becomes the Card Czar, and everyone draws back up to ten White Cards.</string>
-    <string name="HTP_placeholder7">7. Some black cards require the players to pick 2 white cards:</string>
-    <string name="HTP_placeholder8">A. To answer these, each player plays two White Cards in combination.</string>
-    <string name="HTP_placeholder9">B. The cards must be played in the order the Card Czar should read them.</string>
+    <string name="HTP_placeholder1">To start the game, each player draws ten White Cards.</string>
+    <string name="HTP_placeholder2">Player 1 goes first. The order is determined by the players.</string>
+    <string name="HTP_placeholder3">Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.</string>
+    <string name="HTP_placeholder4">The Card Czar will shuffle all of the answers and shares each card combination with the group. For full effect re-read the Black Card before presenting each answer.</string>
+    <string name="HTP_placeholder5">The Card Czar will then select the funniest cards and whomever submitted the card receives an Awesome Point!</string>
+    <string name="HTP_placeholder6">After the round, a new player becomes the Card Czar, and everyone draws back up to ten White Cards.</string>
+    <string name="HTP_placeholder7">Some black cards require the players to pick 2 white cards:</string>
+    <string name="HTP_placeholder8">To answer these, each player plays two White Cards in combination.</string>
+    <string name="HTP_placeholder9">The cards must be played in the order the Card Czar should read them.</string>
 
     <string-array name="array_num_players">
         <item>2</item>

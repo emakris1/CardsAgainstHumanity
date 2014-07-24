@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -69,8 +70,8 @@ public class CardCzarRead extends Activity
     public void showDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Player");
-        dialogBuilder.setMessage("It is now Player " + (Game.currentPlayer + 1) + "'s turn. Please pass the device to him or her.");
+        dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
+        dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -81,6 +82,10 @@ public class CardCzarRead extends Activity
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
 }

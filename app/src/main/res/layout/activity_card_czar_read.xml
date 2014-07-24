@@ -25,7 +25,9 @@
         android:layout_alignTop="@+id/imgCZBlackCardLarge"
         android:layout_alignLeft="@+id/imgCZBlackCardLarge"
         android:layout_alignRight="@+id/imgCZBlackCardLarge"
-        android:layout_margin="16dp" />
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textSize="26sp" />
 
     <TextView
         android:layout_width="wrap_content"

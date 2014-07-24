@@ -9,117 +9,347 @@
     tools:context="com.cardsagainsthumanity.app.HowToPlay">
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_centerInParent="true"
+        android:fillViewport="false">
 
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="fill_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder1"
-                android:id="@+id/textView10"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard1"
+                android:layout_margin="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder2"
-                android:id="@+id/textView11"
-                android:layout_marginTop="37dp"
-                android:layout_below="@+id/textView10"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard1"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/textView12"
-                android:text="@string/HTP_placeholder3"
-                android:layout_below="@+id/textView11"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="33dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder1"
+                    android:id="@+id/textViewRule1"
+                    android:layout_alignTop="@+id/textViewRule1"
+                    android:layout_alignLeft="@+id/textViewRule1"
+                    android:layout_alignRight="@+id/textViewRule1"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder4"
-                android:id="@+id/textView13"
-                android:layout_below="@+id/textView12"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="29dp" />
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard2"
+                android:layout_margin="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder5"
-                android:id="@+id/textView14"
-                android:layout_below="@+id/textView13"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="25dp" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard2"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder6"
-                android:id="@+id/textView15"
-                android:layout_below="@+id/textView14"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="21dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder2"
+                    android:id="@+id/textViewRule2"
+                    android:layout_alignTop="@+id/textViewRule2"
+                    android:layout_alignLeft="@+id/textViewRule2"
+                    android:layout_alignRight="@+id/textViewRule2"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder7"
-                android:id="@+id/textView16"
-                android:layout_below="@+id/textView15"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="17dp" />
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard3"
+                android:layout_margin="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder8"
-                android:id="@+id/textView17"
-                android:layout_below="@+id/textView16"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="13dp" />
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard3"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/HTP_placeholder9"
-                android:id="@+id/textView18"
-                android:layout_below="@+id/textView17"
-                android:layout_alignLeft="@+id/textView17"
-                android:layout_alignStart="@+id/textView17"
-                android:layout_alignRight="@+id/textView17"
-                android:layout_alignEnd="@+id/textView17"
-                android:layout_marginTop="9dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder3"
+                    android:id="@+id/textViewRule3"
+                    android:layout_alignTop="@+id/textViewRule3"
+                    android:layout_alignLeft="@+id/textViewRule3"
+                    android:layout_alignRight="@+id/textViewRule3"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
 
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard4"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard4"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder4"
+                    android:id="@+id/textViewRule4"
+                    android:layout_alignTop="@+id/textViewRule4"
+                    android:layout_alignLeft="@+id/textViewRule4"
+                    android:layout_alignRight="@+id/textViewRule4"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard5"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard5"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder5"
+                    android:id="@+id/textViewRule5"
+                    android:layout_alignTop="@+id/textViewRule5"
+                    android:layout_alignLeft="@+id/textViewRule5"
+                    android:layout_alignRight="@+id/textViewRule5"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard6"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard6"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder6"
+                    android:id="@+id/textViewRule6"
+                    android:layout_alignTop="@+id/textViewRule6"
+                    android:layout_alignLeft="@+id/textViewRule6"
+                    android:layout_alignRight="@+id/textViewRule6"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard7"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard7"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder7"
+                    android:id="@+id/textViewRule7"
+                    android:layout_alignTop="@+id/textViewRule7"
+                    android:layout_alignLeft="@+id/textViewRule7"
+                    android:layout_alignRight="@+id/textViewRule7"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard8"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard8"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder8"
+                    android:id="@+id/textViewRule8"
+                    android:layout_alignTop="@+id/textViewRule8"
+                    android:layout_alignLeft="@+id/textViewRule8"
+                    android:layout_alignRight="@+id/textViewRule8"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/HTP_RLCard9"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/HTP_imgWhiteCard9"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/HTP_placeholder9"
+                    android:id="@+id/textViewRule9"
+                    android:layout_alignTop="@+id/textViewRule9"
+                    android:layout_alignLeft="@+id/textViewRule9"
+                    android:layout_alignRight="@+id/textViewRule9"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:textStyle="bold"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:layout_margin="20dp"
+                    android:textIsSelectable="false" />
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 
 </RelativeLayout>
-
