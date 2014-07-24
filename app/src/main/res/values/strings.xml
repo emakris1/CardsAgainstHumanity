@@ -10,7 +10,7 @@
     <string name="button_clean_deck">\"Clean\" Deck</string>
     <string name="button_create_game">Create Game</string>
     <string name="black_card_placeholder">In an attempt to reach a wider audience, the Smithsonian Museum of Natural History has opened an interactive exhibit on _____.</string>
-    <string name="black_card_read_prompt">Tap the card to continue.</string>
+    <string name="black_card_read_prompt">Tap the card to continue</string>
     <string name="black_card_expand">View\n Black\n Card</string>
     <string name="spinner_num_players">Choose the number of players</string>
     <string name="spinner_max_awesome_points">Choose the maximum number of Awesome Points</string>
@@ -30,8 +30,8 @@
     <string name="title_activity_player_card_selection">Player Card Selection</string>
     <string name="title_activity_card_czar_select">Card Czar Selection</string>
     <string name="white_card_placeholder">Saying "I disapprove of what you say, but I will defend to the death your right to say it" when you know you wouldn\'t</string>
-    <string name="white_card_player_select_prompt">Long press your card(s) to submit them.</string>
-    <string name="white_card_cz_select_prompt">Long press a player\'s card(s) to select them.</string>
+    <string name="white_card_player_select_prompt">Long press your card(s) to submit them</string>
+    <string name="white_card_cz_select_prompt">Long press a player\'s card(s) to select them</string>
     <string name="HTP_placeholder1">To start the game, each player draws ten White Cards.</string>
     <string name="HTP_placeholder2">Player 1 goes first. The order is determined by the players.</string>
     <string name="HTP_placeholder3">Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.</string>
