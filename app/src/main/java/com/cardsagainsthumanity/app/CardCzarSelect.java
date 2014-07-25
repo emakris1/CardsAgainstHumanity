@@ -96,6 +96,28 @@ public class CardCzarSelect extends Activity
         }
     }
 
+    public void showCardCzarDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Switch to Card Czar");
+        dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                startActivity(new Intent(getApplicationContext(), CardCzarSelect.class));
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
+    }
+
     public void showQuitDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);

@@ -225,6 +225,7 @@ public class PlayerCardSelection extends Activity
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
         dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+        dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
@@ -246,6 +247,7 @@ public class PlayerCardSelection extends Activity
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
         dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
