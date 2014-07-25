@@ -171,8 +171,12 @@ public class PlayerCardSelection extends Activity
 
                         if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
                         {
-                            for(int i = 0; i < removeIndex.size(); i++)
+                            for(int i = 0; i < removeIndex.size(); i++) {
                                 Game.players.get(Game.currentPlayer).removePlayerCard(i);
+                                WhiteCard tmpCard = Game.whiteDeck.remove();
+                                tmpCard.setOwner(Game.currentPlayer);
+                                Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
+                            }
                             Game.submittedCards.add(cardsToSubmit);
                             showCardCzarDialog();
                         }
