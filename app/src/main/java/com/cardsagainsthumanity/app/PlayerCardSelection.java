@@ -191,15 +191,8 @@ public class PlayerCardSelection extends Activity
                             }
 
                             else{
-                                if(Game.currentPlayer < Game.numPlayers - 1){
-                                    Game.currentPlayer++;
-                                }
-
-                                else{
-                                    Game.currentPlayer = 0;
-                                }
-
-                                showPlayerDialog();
+                               Game.switchPlayer();
+                               showPlayerDialog();
                             }
                         }
 

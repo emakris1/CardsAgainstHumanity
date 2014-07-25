@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder1"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule1"
                     android:layout_alignTop="@+id/textViewRule1"
                     android:layout_alignLeft="@+id/textViewRule1"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder2"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule2"
                     android:layout_alignTop="@+id/textViewRule2"
                     android:layout_alignLeft="@+id/textViewRule2"
@@ -117,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder3"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule3"
                     android:layout_alignTop="@+id/textViewRule3"
                     android:layout_alignLeft="@+id/textViewRule3"
@@ -153,7 +153,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder4"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule4"
                     android:layout_alignTop="@+id/textViewRule4"
                     android:layout_alignLeft="@+id/textViewRule4"
@@ -189,7 +189,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder5"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule5"
                     android:layout_alignTop="@+id/textViewRule5"
                     android:layout_alignLeft="@+id/textViewRule5"
@@ -226,7 +226,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder6"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule6"
                     android:layout_alignTop="@+id/textViewRule6"
                     android:layout_alignLeft="@+id/textViewRule6"
@@ -262,7 +262,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder7"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule7"
                     android:layout_alignTop="@+id/textViewRule7"
                     android:layout_alignLeft="@+id/textViewRule7"
@@ -298,47 +298,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder8"
+                    android:text="@string/HTP_placeholder"
                     android:id="@+id/textViewRule8"
                     android:layout_alignTop="@+id/textViewRule8"
                     android:layout_alignLeft="@+id/textViewRule8"
                     android:layout_alignRight="@+id/textViewRule8"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:textStyle="bold"
-                    android:textSize="26sp"
-                    android:textColor="@android:color/black"
-                    android:layout_margin="20dp"
-                    android:textIsSelectable="false" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="300dp"
-                android:layout_height="400dp"
-                android:id="@+id/HTP_RLCard9"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/HTP_imgWhiteCard9"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/HTP_placeholder9"
-                    android:id="@+id/textViewRule9"
-                    android:layout_alignTop="@+id/textViewRule9"
-                    android:layout_alignLeft="@+id/textViewRule9"
-                    android:layout_alignRight="@+id/textViewRule9"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
                     android:textStyle="bold"
@@ -353,3 +317,5 @@
     </ScrollView>
 
 </RelativeLayout>
+
+

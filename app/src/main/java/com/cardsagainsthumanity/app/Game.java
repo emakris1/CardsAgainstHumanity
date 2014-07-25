@@ -21,6 +21,17 @@ public class Game
     public static int currentCardCzar;
     public static int currentPlayer;
     public static int winningPlayer;
+    public static boolean gameWon;
+
+    public static void switchPlayer()
+    {
+        if (currentPlayer < numPlayers - 1)
+            currentPlayer++;
+        else
+            currentPlayer = 0;
+    }
+
+
 
     /**
      * Method to alternate the role of card czar.

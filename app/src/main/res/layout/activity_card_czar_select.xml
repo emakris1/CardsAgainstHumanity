@@ -102,6 +102,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard1"
+                    android:layout_alignRight="@+id/imgSubWhiteCard1"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard1"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -136,6 +152,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard2"
+                    android:layout_alignRight="@+id/imgSubWhiteCard2"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard2"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -172,6 +204,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard3"
+                    android:layout_alignRight="@+id/imgSubWhiteCard3"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard3"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -207,6 +255,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup4"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard4"
+                    android:layout_alignRight="@+id/imgSubWhiteCard4"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard4"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -241,6 +305,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard5"
+                    android:layout_alignRight="@+id/imgSubWhiteCard5"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard5"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -278,6 +358,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup6"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard6"
+                    android:layout_alignRight="@+id/imgSubWhiteCard6"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard6"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -312,6 +408,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup7"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard7"
+                    android:layout_alignRight="@+id/imgSubWhiteCard7"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard7"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -383,6 +495,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup9"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard9"
+                    android:layout_alignRight="@+id/imgSubWhiteCard9"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard9"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -418,6 +546,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup10"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard10"
+                    android:layout_alignRight="@+id/imgSubWhiteCard10"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard10"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -455,6 +599,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup11"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard11"
+                    android:layout_alignRight="@+id/imgSubWhiteCard11"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard11"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -490,6 +650,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup12"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard12"
+                    android:layout_alignRight="@+id/imgSubWhiteCard12"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard12"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -527,6 +703,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup13"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard13"
+                    android:layout_alignRight="@+id/imgSubWhiteCard13"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard13"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -562,6 +754,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup14"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard14"
+                    android:layout_alignRight="@+id/imgSubWhiteCard14"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard14"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -599,6 +807,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup15"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard15"
+                    android:layout_alignRight="@+id/imgSubWhiteCard15"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard15"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -634,6 +858,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup16"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard16"
+                    android:layout_alignRight="@+id/imgSubWhiteCard16"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard16"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -671,6 +911,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup17"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard17"
+                    android:layout_alignRight="@+id/imgSubWhiteCard17"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard17"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -706,6 +962,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup18"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard18"
+                    android:layout_alignRight="@+id/imgSubWhiteCard18"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard18"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -743,6 +1015,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup19"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard19"
+                    android:layout_alignRight="@+id/imgSubWhiteCard19"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard19"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -778,6 +1066,22 @@
                     android:layout_margin="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup20"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard20"
+                    android:layout_alignRight="@+id/imgSubWhiteCard20"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard20"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -815,113 +1119,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard22"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard22"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_alignWithParentIfMissing="false"
-                    android:layout_centerInParent="true" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard22"
-                    android:layout_alignTop="@+id/imgSubWhiteCard22"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard22"
-                    android:layout_alignRight="@+id/imgSubWhiteCard22"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_margin="20dp"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup21"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard21"
+                    android:layout_alignRight="@+id/imgSubWhiteCard21"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard21"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard23"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard23"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_alignWithParentIfMissing="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard23"
-                    android:layout_alignTop="@+id/imgSubWhiteCard23"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard23"
-                    android:layout_alignRight="@+id/imgSubWhiteCard23"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_margin="20dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard24"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard24"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_alignWithParentIfMissing="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard24"
-                    android:layout_alignTop="@+id/imgSubWhiteCard24"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard24"
-                    android:layout_alignRight="@+id/imgSubWhiteCard24"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_margin="20dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
@@ -930,3 +1142,5 @@
     </HorizontalScrollView>
 
 </RelativeLayout>
+
+
