@@ -26,7 +26,7 @@ public class CardCzarSelect extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_select);
         displayBlackCardText();
-        //displaySubmittedCardText();
+        displaySubmittedCardText();
     }
 
 
@@ -72,13 +72,13 @@ public class CardCzarSelect extends Activity
             rl.get(i).setVisibility(View.VISIBLE);
         }
 
-        for(int i = 23; i >= Game.getCurrentBlackCard().getNumPrompts()*Game.numPlayers; i--){
+        for(int i = 23; i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
             rl.get(i).setVisibility(View.GONE);
         }
 
         int k = 0;
 
-        for(int i = 0; i < Game.numPlayers; i++) {
+        for(int i = 0; i < Game.numPlayers - 1; i++) {
             for(int j = 0; j < Game.getCurrentBlackCard().getNumPrompts(); j++){
                 temp.get(k).setText(Game.submittedCards.get(i).get(j).getText());
                 k++;

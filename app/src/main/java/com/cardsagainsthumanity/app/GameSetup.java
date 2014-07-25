@@ -71,6 +71,7 @@ public class GameSetup extends Activity
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
                 readInput();
                 createPlayers();
+                Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
                 showDialog();
             }
         });

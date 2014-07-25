@@ -23,7 +23,8 @@ import java.util.ArrayList;
 public class PlayerCardSelection extends Activity
 {
 
-    ArrayList<WhiteCard> cardsToSubmit = new ArrayList<WhiteCard>();
+    ArrayList<WhiteCard> cardsToSubmit;
+    ArrayList<Integer> removeIndex;
     int numCardsSubmitted;
 
     @Override
@@ -109,6 +110,9 @@ public class PlayerCardSelection extends Activity
         player.setText("Player: " + (Game.currentPlayer + 1));
         points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
         submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
+        cardsToSubmit = new ArrayList<WhiteCard>();
+        removeIndex = new ArrayList<Integer>();
+        numCardsSubmitted = 0;
     }
 
     public void displayWhiteCardText()
@@ -152,7 +156,9 @@ public class PlayerCardSelection extends Activity
                     @Override
                     public boolean onLongClick(View view)
                     {
-                        cardsToSubmit.add(Game.players.get(Game.currentPlayer).removePlayerCard(index));
+                        cardsToSubmit.add(Game.players.get(Game.currentPlayer).getPlayerCard(index));
+                        numCardsSubmitted++;
+                        removeIndex.add(index);
 
                         imgWhiteCard.setEnabled(false);
                         imgWhiteCard.setImageAlpha(63);
@@ -163,9 +169,11 @@ public class PlayerCardSelection extends Activity
                         showToast("Card Submitted!");
                         submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
 
-                        if (++numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
+                        if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
                         {
-                            //Game.submittedCards.add(cardsToSubmit);
+                            for(int i = 0; i < removeIndex.size(); i++)
+                                Game.players.get(Game.currentPlayer).removePlayerCard(i);
+                            Game.submittedCards.add(cardsToSubmit);
                             showCardCzarDialog();
                         }
                         return true;
