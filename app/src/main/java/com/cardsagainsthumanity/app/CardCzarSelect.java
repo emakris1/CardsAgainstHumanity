@@ -77,13 +77,15 @@ public class CardCzarSelect extends Activity
     public void displaySubmittedCardText()
     {
         ArrayList<RelativeLayout> rl = new ArrayList<RelativeLayout>();
-        ArrayList<TextView> temp = new ArrayList<TextView>();
+        ArrayList<TextView> txtWhiteCards = new ArrayList<TextView>();
+        ArrayList<TextView> txtGroups = new ArrayList<TextView>();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
 
         for(int i = 0; i < 21; i++){
             rl.add((RelativeLayout) linearLayout.getChildAt(i));
             RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);   //I tried doing the TextView on one line,
-            temp.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
+            txtWhiteCards.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
+            txtGroups.add((TextView) tempRel.getChildAt(2));
         }
 
         for(int i = 0; i < 21; i++){
@@ -98,7 +100,8 @@ public class CardCzarSelect extends Activity
 
         for(int i = 0; i < Game.numPlayers - 1; i++) {
             for(int j = 0; j < Game.getCurrentBlackCard().getNumPrompts(); j++){
-                temp.get(k).setText(Game.submittedCards.get(i).get(j).getText());
+                txtWhiteCards.get(k).setText(Game.submittedCards.get(i).get(j).getText());
+                txtGroups.get(k).setText("Set " + (i+1));
                 k++;
             }
         }
@@ -108,8 +111,8 @@ public class CardCzarSelect extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         if(Game.gameWon){
-            dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1) + " is the Round Winner!");
-            dialogBuilder.setMessage("Player " + (Game.winningPlayer + 1) + " is the Supreme Ruler of the Universe!");
+            dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1) + " is the Supreme Ruler of the Universe!");
+            dialogBuilder.setMessage("This lucky person was the first to reach " + Game.maxAwesomePoints + " awesome points!");
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
             {

@@ -167,14 +167,15 @@ public class GameSetup extends Activity
             for (int j = 0; j < 10; j++)
             {
                 WhiteCard tmpCard = Game.whiteDeck.remove();
-                tmpCard.setOwner(j);
+                tmpCard.setOwner(i);
                 tmpPlayer.addPlayerCard(tmpCard);
             }
 
             Game.players.add(tmpPlayer);
-            Game.currentCardCzar = 0;
-            Game.currentPlayer = 1;
         }
+
+        Game.currentCardCzar = 0;
+        Game.currentPlayer = 1;
     }
 
 }
