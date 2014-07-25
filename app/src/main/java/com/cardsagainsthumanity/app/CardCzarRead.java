@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class CardCzarRead extends Activity
 {
@@ -22,6 +24,7 @@ public class CardCzarRead extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_read);
+        Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
         displayBlackCardText();
         onBlackCardClick();
     }
