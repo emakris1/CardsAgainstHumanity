@@ -1,10 +1,14 @@
 package com.cardsagainsthumanity.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -50,6 +54,12 @@ public class CardCzarSelect extends Activity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        showQuitDialog();
+    }
+
     public void displayBlackCardText()
     {
         final TextView txtBlackCardLarge = (TextView) findViewById(R.id.txtCZBlackCardLarge);
@@ -84,6 +94,37 @@ public class CardCzarSelect extends Activity
                 k++;
             }
         }
+    }
+
+    public void showQuitDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Quit to Main Menu");
+        dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                startActivity(new Intent(getApplicationContext(), MainMenu.class));
+            }
+        });
+
+        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
 }
