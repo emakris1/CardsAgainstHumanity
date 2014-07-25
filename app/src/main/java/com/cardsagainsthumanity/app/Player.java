@@ -38,5 +38,9 @@ public class Player
      */
     public WhiteCard removePlayerCard(int index){return this.playerCards.remove(index);}
 
+    public String toString()
+    {
+        return "Player " + (this.getPlayerNum() + 1) + ": " + this.getNumAwesomePoints() + " Awesome Points\n";
+    }
 }
 

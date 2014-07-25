@@ -124,12 +124,11 @@ public class CardCzarSelect extends Activity
         }
 
         else {
-            dialogBuilder.setTitle("Player " + (roundWinner + 1) + " is the Round Winner!");
-            //dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+            dialogBuilder.setTitle("Round Won!");
+            dialogBuilder.setMessage("Player " + (roundWinner + 1) + " is the Round Winner!\n\n" + displayScoreboard());
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    //startActivity(new Intent(getApplicationContext(), CardCzarSelect.class));
                     showCardCzarDialog();
                 }
             });
@@ -145,6 +144,7 @@ public class CardCzarSelect extends Activity
 
     public void showCardCzarDialog()
     {
+        Game.switchCardCzar();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
         dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
@@ -238,4 +238,15 @@ public class CardCzarSelect extends Activity
             }
         }
     }
+
+    public StringBuilder displayScoreboard()
+    {
+        StringBuilder text = new StringBuilder();
+        text.append("SCOREBOARD:\n");
+        text.append("==========\n");
+        for (int i = 0; i < Game.numPlayers; i++)
+            text.append(Game.players.get(i).toString());
+        return text;
+    }
+
 }

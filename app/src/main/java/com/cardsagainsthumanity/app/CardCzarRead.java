@@ -25,6 +25,15 @@ public class CardCzarRead extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_read);
         Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
+
+        if(Game.currentCardCzar < Game.numPlayers - 1) {
+            Game.currentPlayer = Game.currentCardCzar + 1;
+        }
+
+        else{
+            Game.currentPlayer = 0;
+        }
+
         displayBlackCardText();
         onBlackCardClick();
     }
