@@ -83,18 +83,18 @@ public class CardCzarSelect extends Activity
         ArrayList<TextView> txtGroups = new ArrayList<TextView>();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
 
-        for(int i = 0; i < 60; i++){
+        for(int i = 0; i < linearLayout.getChildCount(); i++){
             rl.add((RelativeLayout) linearLayout.getChildAt(i));
             RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);   //I tried doing the TextView on one line,
             txtWhiteCards.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
             txtGroups.add((TextView) tempRel.getChildAt(2));
         }
 
-        for(int i = 0; i < 60; i++){
+        for(int i = 0; i < linearLayout.getChildCount(); i++){
             rl.get(i).setVisibility(View.VISIBLE);
         }
 
-        for(int i = 59; i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
+        for(int i = (linearLayout.getChildCount() - 1); i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
             rl.get(i).setVisibility(View.GONE);
         }
 

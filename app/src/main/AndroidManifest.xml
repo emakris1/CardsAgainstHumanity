@@ -56,11 +56,13 @@
         </activity>
         <activity
             android:name="com.cardsagainsthumanity.app.CardCzarSelect"
-            android:label="@string/title_activity_card_czar_select" >
+            android:label="@string/title_activity_card_czar_select"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.cardsagainsthumanity.app.ScoreBoard"
-            android:label="@string/title_activity_score_board" >
+            android:label="@string/title_activity_score_board"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

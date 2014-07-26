@@ -460,6 +460,22 @@
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup8"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard8"
+                    android:layout_alignRight="@+id/imgSubWhiteCard8"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard8"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -1269,7 +1285,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard1"
+                    android:id="@+id/txtSubWhiteCard24"
                     android:layout_alignTop="@+id/imgSubWhiteCard24"
                     android:layout_alignLeft="@+id/imgSubWhiteCard24"
                     android:layout_alignRight="@+id/imgSubWhiteCard24"
@@ -1951,6 +1967,60 @@
                 android:layout_width="240dp"
                 android:layout_height="320dp"
                 android:id="@+id/RLSubCard37"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/imgSubWhiteCard37"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="false"
+                    android:focusableInTouchMode="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/white_card_placeholder"
+                    android:id="@+id/txtSubWhiteCard37"
+                    android:layout_alignTop="@+id/imgSubWhiteCard37"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard37"
+                    android:layout_alignRight="@+id/imgSubWhiteCard37"
+                    android:layout_margin="20dp"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/submitted_card_count"
+                    android:id="@+id/txtCardGroup37"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignLeft="@+id/imgSubWhiteCard37"
+                    android:layout_alignRight="@+id/imgSubWhiteCard37"
+                    android:layout_alignBottom="@+id/imgSubWhiteCard37"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="240dp"
+                android:layout_height="320dp"
+                android:id="@+id/RLSubCard38"
                 android:layout_margin="8dp">
 
                 <ImageView
@@ -3021,168 +3091,6 @@
                     android:layout_alignLeft="@+id/imgSubWhiteCard57"
                     android:layout_alignRight="@+id/imgSubWhiteCard57"
                     android:layout_alignBottom="@+id/imgSubWhiteCard57"
-                    android:textColor="@android:color/black"
-                    android:gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard58"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard58"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard58"
-                    android:layout_alignTop="@+id/imgSubWhiteCard58"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard58"
-                    android:layout_alignRight="@+id/imgSubWhiteCard58"
-                    android:layout_margin="20dp"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/submitted_card_count"
-                    android:id="@+id/txtCardGroup58"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard58"
-                    android:layout_alignRight="@+id/imgSubWhiteCard58"
-                    android:layout_alignBottom="@+id/imgSubWhiteCard58"
-                    android:textColor="@android:color/black"
-                    android:gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard59"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard59"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard59"
-                    android:layout_alignTop="@+id/imgSubWhiteCard59"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard59"
-                    android:layout_alignRight="@+id/imgSubWhiteCard59"
-                    android:layout_margin="20dp"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/submitted_card_count"
-                    android:id="@+id/txtCardGroup59"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard59"
-                    android:layout_alignRight="@+id/imgSubWhiteCard59"
-                    android:layout_alignBottom="@+id/imgSubWhiteCard59"
-                    android:textColor="@android:color/black"
-                    android:gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="240dp"
-                android:layout_height="320dp"
-                android:id="@+id/RLSubCard60"
-                android:layout_margin="8dp">
-
-                <ImageView
-                    android:layout_height="match_parent"
-                    android:layout_width="match_parent"
-                    android:id="@+id/imgSubWhiteCard60"
-                    android:src="@drawable/whitecard"
-                    android:adjustViewBounds="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentStart="false"
-                    android:layout_alignParentRight="false"
-                    android:layout_centerInParent="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/white_card_placeholder"
-                    android:id="@+id/txtSubWhiteCard60"
-                    android:layout_alignTop="@+id/imgSubWhiteCard60"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard60"
-                    android:layout_alignRight="@+id/imgSubWhiteCard60"
-                    android:layout_margin="20dp"
-                    android:layout_alignParentLeft="false"
-                    android:layout_alignParentTop="false"
-                    android:layout_alignParentEnd="false"
-                    android:layout_alignParentStart="false"
-                    android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/submitted_card_count"
-                    android:id="@+id/txtCardGroup60"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignLeft="@+id/imgSubWhiteCard60"
-                    android:layout_alignRight="@+id/imgSubWhiteCard60"
-                    android:layout_alignBottom="@+id/imgSubWhiteCard60"
                     android:textColor="@android:color/black"
                     android:gravity="center"
                     android:layout_marginBottom="8dp"
