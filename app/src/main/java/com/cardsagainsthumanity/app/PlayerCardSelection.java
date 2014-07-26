@@ -179,9 +179,13 @@ public class PlayerCardSelection extends Activity
                         {
                             for(int i = 0; i < removeIndex.size(); i++) {
                                 Game.players.get(Game.currentPlayer).removePlayerCard(i);
-                                WhiteCard tmpCard = Game.whiteDeck.remove();
-                                tmpCard.setOwner(Game.currentPlayer);
-                                Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
+                                try {
+                                    WhiteCard tmpCard = Game.whiteDeck.remove();
+                                    tmpCard.setOwner(Game.currentPlayer);
+                                    Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
+                                }catch(Exception e){
+                                    Game.deckEmpty = true;
+                                }
                             }
 
                             Game.submittedCards.add(cardsToSubmit);

@@ -110,9 +110,23 @@ public class CardCzarSelect extends Activity
     public void showRoundWinnerDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+
         if(Game.gameWon){
             dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1) + " is the Supreme Ruler of the Universe!");
             dialogBuilder.setMessage("This lucky person was the first to reach " + Game.maxAwesomePoints + " awesome points!");
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                }
+            });
+        }
+
+        else if(Game.deckEmpty){
+            dialogBuilder.setTitle("Game Over");
+            dialogBuilder.setMessage("The deck has been depleted.");
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
             {

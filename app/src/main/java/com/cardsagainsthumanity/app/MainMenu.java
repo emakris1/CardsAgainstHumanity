@@ -1,11 +1,14 @@
 package com.cardsagainsthumanity.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class MainMenu extends Activity
@@ -19,7 +22,6 @@ public class MainMenu extends Activity
         onPlayGameButtonClick();
         onHowToPlayButtonClick();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -40,6 +42,12 @@ public class MainMenu extends Activity
         if (id == R.id.action_settings)
             return true;
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        showQuitDialog();
     }
 
     public void onPlayGameButtonClick()
@@ -68,4 +76,39 @@ public class MainMenu extends Activity
         });
     }
 
+    public void showQuitDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Exit Cards Against Humanity");
+        dialogBuilder.setMessage("Are you sure you want to exit Cards Against Humanity?");
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
+
+        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
+    }
+
 }
+

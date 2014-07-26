@@ -25,7 +25,13 @@ public class CardCzarRead extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_read);
         Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
-        displayBlackCardText();
+        try {
+            displayBlackCardText();
+        }catch(Exception e){
+            Game.deckEmpty = true;
+            showQuitDialog();
+        }
+
         onBlackCardClick();
     }
 
@@ -83,16 +89,29 @@ public class CardCzarRead extends Activity
     public void showPlayerDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
-        dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
-        dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
+        if(Game.deckEmpty){
+            dialogBuilder.setTitle("Game Over");
+            dialogBuilder.setMessage("The deck has been depleted");
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
             {
-                startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
-            }
-        });
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
+                }
+            });
+        }
+
+        else {
+            dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
+            dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
+                }
+            });
+        }
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
