@@ -74,6 +74,8 @@ public class CardCzarSelect extends Activity
         txtBlackCardLarge.setText(Game.getCurrentBlackCard().getText());
     }
 
+    //Only include 21 cards in the CardCzarSelect xml. Only allow eight players to play
+
     public void displaySubmittedCardText()
     {
         ArrayList<RelativeLayout> rl = new ArrayList<RelativeLayout>();
@@ -81,18 +83,18 @@ public class CardCzarSelect extends Activity
         ArrayList<TextView> txtGroups = new ArrayList<TextView>();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
 
-        for(int i = 0; i < 21; i++){
+        for(int i = 0; i < 60; i++){
             rl.add((RelativeLayout) linearLayout.getChildAt(i));
             RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);   //I tried doing the TextView on one line,
             txtWhiteCards.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
             txtGroups.add((TextView) tempRel.getChildAt(2));
         }
 
-        for(int i = 0; i < 21; i++){
+        for(int i = 0; i < 60; i++){
             rl.get(i).setVisibility(View.VISIBLE);
         }
 
-        for(int i = 20; i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
+        for(int i = 59; i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
             rl.get(i).setVisibility(View.GONE);
         }
 
@@ -125,7 +127,7 @@ public class CardCzarSelect extends Activity
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
                 }
             });
         }
@@ -145,7 +147,7 @@ public class CardCzarSelect extends Activity
             {
                 public void onClick(DialogInterface dialog, int which)
                 {
-                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
                 }
             });
         }
@@ -163,40 +165,10 @@ public class CardCzarSelect extends Activity
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    showCardCzarDialog();
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
                 }
             });
         }
-
-        AlertDialog alertDialog = dialogBuilder.create();
-        alertDialog.show();
-
-        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
-        alertDialog.getWindow().setAttributes(lp);
-    }
-
-    public void showCardCzarDialog()
-    {
-        Game.switchCardCzar();
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Card Czar");
-        if(Game.isDirty) {
-            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
-        }
-
-        else{
-            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
-        }
-
-        dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
-                startActivity(new Intent(getApplicationContext(), CardCzarRead.class));
-            }
-        });
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();

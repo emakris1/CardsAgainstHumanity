@@ -1,4 +1,3 @@
-//how to play java class
 package com.cardsagainsthumanity.app;
 
 import android.app.Activity;
@@ -49,12 +48,12 @@ public class HowToPlay extends Activity
         TextView textRule7 = (TextView) findViewById(R.id.textViewRule7);
         TextView textRule8 = (TextView) findViewById(R.id.textViewRule8);
 
-        textRule1.setText("To start the game, each player draws ten White Cards.");
-        textRule2.setText("Player 1 goes first. The order is determined by the players.");
-        textRule3.setText("Everyone else answers the question by passing one or two white cards, face down, to the Card Czar.");
-        textRule4.setText("The Card Czar will shuffle all of the answers and shares each card combination with the group. For full effect re-read the Black Card before presenting each answer.");
+        textRule1.setText("Once the game starts, each player is given 10 white cards");
+        textRule2.setText("Player 1 is automatically set to Card Czar while player 2 is first to submit their card(s).");
+        textRule3.setText("Everyone answers the question by passing one, two, or three white cards to the Card Czar. The game will automatically shuffle the submitted cards.");
+        textRule4.setText("The Card Czar will read each card combination with the other players. For full effect re-read the Black Card before presenting each answer.");
         textRule5.setText("The Card Czar will then select the funniest cards and whomever submitted the card receives an Awesome Point!");
-        textRule6.setText("After the round, a new player becomes the Card Czar, and everyone draws back up to ten White Cards.");
+        textRule6.setText("After the round, the next player becomes the Card Czar, and everyone is drawn back up to ten White Cards.");
         textRule7.setText("Rules for pick 2 or 3 white Cards: Each player picks 2 or 3 white cards in combination. The cards must be played in the order the Card Czar should read them.");
         textRule8.setText("Lastly, remember to have fun!");
     }

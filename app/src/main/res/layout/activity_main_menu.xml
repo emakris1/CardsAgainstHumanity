@@ -8,47 +8,67 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.cardsagainsthumanity.app.MainMenu">
 
-    <View
-        android:id="@+id/anchor"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/CAH_Title"
+        android:id="@+id/txtAppTitle"
+        android:layout_alignParentTop="true"
+        android:textSize="48sp"
+        android:textStyle="bold"
         android:layout_centerInParent="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_play_game"
-        android:id="@+id/btnPlayGame"
-        android:layout_alignParentTop="false"
-        android:layout_centerInParent="true"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="false"
-        android:layout_above="@+id/anchor"
-        android:layout_alignLeft="@+id/btnHowToPlay"
-        android:layout_alignRight="@+id/btnHowToPlay" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_how_to_play"
-        android:id="@+id/btnHowToPlay"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/anchor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/app_name"
-        android:id="@+id/txtPrompt"
-        android:layout_alignParentTop="false"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginBottom="64dp"
-        android:layout_above="@+id/btnPlayGame" />
+        android:text="@string/CAH_Subtitle"
+        android:id="@+id/txtAppSubtitle"
+        android:layout_below="@+id/txtAppTitle"
+        android:layout_marginTop="16dp"
+        android:layout_alignLeft="@+id/txtAppTitle"
+        android:layout_alignRight="@+id/txtAppTitle"
+        android:textSize="24dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/txtAppSubtitle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
+
+        <View
+            android:id="@+id/anchor"
+            android:layout_width="128dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_play_game"
+            android:id="@+id/btnPlayGame"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_above="@+id/anchor"
+            android:layout_alignLeft="@+id/anchor"
+            android:layout_alignRight="@+id/anchor" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_how_to_play"
+            android:id="@+id/btnHowToPlay"
+            android:layout_alignParentBottom="false"
+            android:layout_below="@+id/anchor"
+            android:layout_alignLeft="@+id/anchor"
+            android:layout_alignRight="@+id/anchor" />
+    </RelativeLayout>
 
 </RelativeLayout>
+
+
