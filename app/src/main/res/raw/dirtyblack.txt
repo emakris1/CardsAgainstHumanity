@@ -110,7 +110,6 @@
 2 It rubs _____ on its skin or else it gets _____ again.
 1 It sucks when you look in the fridge, and all you have to eat is _____.
 2 It was more uncomfortable than _____ at a _____ convention.
-1 Jesus is _____.
 1 Keep your friends close, but your _____ closer.
 1 Kitten thinks of nothing but _____ all day.
 2 Legend of Zelda: The _____ of _____.
@@ -230,8 +229,6 @@
 2 Wonder Twin powers, activate! Shape of _____. Form of _____.
 1 You can never have too many _____ when in East LA.
 1 You can never have too much _____.
-1 You know God hates you when _____.
-1 You’re in good hands with _____.
 1 In its new tourism campaign, Detroit proudly proclaims that it has finally eliminated _____.
 1 In L.A. County Jail, word is you can trade 200 cigarettes for _____.
 2 In M. Night Shyamalan's new movie, Bruce Willis discovers that _____ had really been _____ all along.
@@ -333,7 +330,6 @@
 2 I spent my whole life working toward _____, only to have it ruined by _____.
 1 After blacking out during New Year's Eve, I was awoken by _____.
 1 Every Christmas, my uncle gets drunk and tells the story about _____.
-1 Jesus is _____.
 1 This holiday season, Tim Allen must overcome his fear of _____ to save Christmas.
 1 On the third day of Christmas, my true love gave to me: three French hens, two turtle doves and _____.
 1 Wake up, America. Christmas is under attack by secular liberals and their _____.
@@ -346,3 +342,4 @@
 2 If _____ came in two-fours Canada would be more _____?
 1 In Vancouver it is now legal to _____.
 2 After unifying the GST and PST the Government can now afford to provide _____ for _____.
+3 Make a Haiku! (Note: Haikus don't need to follow the 5-7-5 form. They just have to be read dramatically)
