@@ -23,6 +23,23 @@ public class Game
     public static int winningPlayer;
     public static boolean gameWon;
 
+
+    /**
+     * Method to alternate the role of card czar.
+     * To be called at the end of each round.
+     */
+    public static void switchCardCzar()
+    {
+        if (currentCardCzar < numPlayers - 1)
+            currentCardCzar++;
+        else
+            currentCardCzar = 0;
+    }
+
+    /**
+     * Method to alternate the current player
+     * To be called after each player's turn.
+     */
     public static void switchPlayer()
     {
         if (currentPlayer < numPlayers - 1)
@@ -31,20 +48,16 @@ public class Game
             currentPlayer = 0;
     }
 
-
-
     /**
-     * Method to alternate the role of card czar.
+     * Method to reset the current player on a new round.
      * To be called at the end of each round.
      */
-    public static void switchCardCzar()
+    public static void setNewRoundPlayer()
     {
-        //players.get(cardCzar).toggleIsCardCzar();
-        //if we are keeping track of the Card Czar with the int, we really don't need to have a field for it within the player class
         if (currentCardCzar < numPlayers - 1)
-            currentCardCzar++;
+            currentPlayer = currentCardCzar + 1;
         else
-            currentCardCzar = 0;
+            Game.currentPlayer = 0;
     }
 
     /**
@@ -90,3 +103,5 @@ public class Game
     }
 
 }
+
+

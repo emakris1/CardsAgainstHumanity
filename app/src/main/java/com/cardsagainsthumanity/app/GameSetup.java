@@ -69,6 +69,7 @@ public class GameSetup extends Activity
             {
                 Game.numPlayers = Integer.parseInt(spPlayers.getSelectedItem().toString());
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
+                Game.gameWon = false;
                 readInput();
                 createPlayers();
                 showDialog();
@@ -175,7 +176,8 @@ public class GameSetup extends Activity
         }
 
         Game.currentCardCzar = 0;
-        Game.currentPlayer = 1;
     }
 
 }
+
+

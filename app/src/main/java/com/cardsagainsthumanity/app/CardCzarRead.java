@@ -25,15 +25,6 @@ public class CardCzarRead extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_read);
         Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
-
-        if(Game.currentCardCzar < Game.numPlayers - 1) {
-            Game.currentPlayer = Game.currentCardCzar + 1;
-        }
-
-        else{
-            Game.currentPlayer = 0;
-        }
-
         displayBlackCardText();
         onBlackCardClick();
     }
@@ -74,6 +65,10 @@ public class CardCzarRead extends Activity
 
     public void onBlackCardClick()
     {
+        //Set the next player to follow the Card Czar
+        Game.setNewRoundPlayer();
+
+        // Show a dialog to pass the device to the next player.
         final ImageView blackCard = (ImageView) findViewById(R.id.imgCZBlackCardLarge);
 
         blackCard.setOnClickListener(new View.OnClickListener()
@@ -139,3 +134,5 @@ public class CardCzarRead extends Activity
     }
 
 }
+
+
