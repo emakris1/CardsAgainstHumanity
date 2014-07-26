@@ -91,7 +91,15 @@ public class CardCzarRead extends Activity
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         if(Game.deckEmpty){
             dialogBuilder.setTitle("Game Over");
-            dialogBuilder.setMessage("The deck has been depleted");
+
+            if(Game.isDirty) {
+                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
+            }
+
+            else{
+                dialogBuilder.setMessage("The deck has been depleted.");
+            }
+
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
             {
@@ -103,8 +111,17 @@ public class CardCzarRead extends Activity
         }
 
         else {
-            dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
-            dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+
+            if(Game.isDirty) {
+                dialogBuilder.setTitle("Switch to Douchebag " + (Game.currentPlayer + 1));
+                dialogBuilder.setMessage("Please pass the device to Douchebag " + (Game.currentPlayer + 1));
+            }
+
+            else{
+                dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
+                dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+            }
+
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {

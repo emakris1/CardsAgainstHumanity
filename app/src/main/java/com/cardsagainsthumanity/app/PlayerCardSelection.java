@@ -220,8 +220,17 @@ public class PlayerCardSelection extends Activity
     public void showPlayerDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
-        dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+
+        if(Game.isDirty) {
+            dialogBuilder.setTitle("Switch to Douchebag " + (Game.currentPlayer + 1));
+            dialogBuilder.setMessage("Please pass the device to Douchebag " + (Game.currentPlayer + 1));
+        }
+
+        else{
+            dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
+            dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+        }
+
         dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
@@ -243,7 +252,14 @@ public class PlayerCardSelection extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        if(Game.isDirty) {
+            dialogBuilder.setMessage("Please pass the device to the Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
+        }
+
+        else{
+            dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        }
+
         dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {

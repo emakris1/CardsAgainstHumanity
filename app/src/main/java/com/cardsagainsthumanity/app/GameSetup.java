@@ -81,7 +81,14 @@ public class GameSetup extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        if(Game.isDirty) {
+            dialogBuilder.setMessage("Please pass the device to the Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
+        }
+
+        else{
+            dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        }
+
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)

@@ -111,14 +111,20 @@ public class CardCzarSelect extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
-        if(Game.gameWon){
-            dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1) + " is the Supreme Ruler of the Universe!");
-            dialogBuilder.setMessage("This lucky person was the first to reach " + Game.maxAwesomePoints + " awesome points!");
+        if(Game.gameWon) {
+            if (Game.isDirty) {
+                dialogBuilder.setTitle("Douchebag " + (Game.winningPlayer + 1));
+                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe. This lucky asshole was the first to reach " + Game.maxAwesomePoints + " awesome points!");
+            }
+
+            else{
+                dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1));
+                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe. This lucky person was the first to reach " + Game.maxAwesomePoints + " awesome points!");
+            }
+
             dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-            {
-                public void onClick(DialogInterface dialog, int which)
-                {
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
                     startActivity(new Intent(getApplicationContext(), MainMenu.class));
                 }
             });
@@ -126,7 +132,14 @@ public class CardCzarSelect extends Activity
 
         else if(Game.deckEmpty){
             dialogBuilder.setTitle("Game Over");
-            dialogBuilder.setMessage("The deck has been depleted.");
+            if(Game.isDirty) {
+                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
+            }
+
+            else{
+                dialogBuilder.setMessage("The deck has been depleted.");
+            }
+
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
             {
@@ -139,7 +152,14 @@ public class CardCzarSelect extends Activity
 
         else {
             dialogBuilder.setTitle("Round Won!");
-            dialogBuilder.setMessage("Player " + (roundWinner + 1) + " is the Round Winner!\n\n" + displayScoreboard());
+            if(Game.isDirty) {
+                dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
+            }
+
+            else{
+                dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
+            }
+
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
@@ -161,7 +181,14 @@ public class CardCzarSelect extends Activity
         Game.switchCardCzar();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
-        dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        if(Game.isDirty) {
+            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
+        }
+
+        else{
+            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+        }
+
         dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
         {
@@ -231,7 +258,8 @@ public class CardCzarSelect extends Activity
                         for (int j = 0; j < Game.submittedCards.size(); j++) {
                             for (int k = 0; k < Game.currentBlackCard.getNumPrompts(); k++) {
                                 if (txtWhiteCard.getText() == Game.submittedCards.get(j).get(k).getText()) {
-                                    Game.players.get(Game.submittedCards.get(j).get(k).getOwner()).incAwesomePoints();
+                                    roundWinner = Game.submittedCards.get(j).get(k).getOwner();
+                                    Game.players.get(roundWinner).incAwesomePoints();
                                     found = true;
                                     break;
                                 }
