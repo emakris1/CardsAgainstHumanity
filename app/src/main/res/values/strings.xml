@@ -34,7 +34,12 @@
     <string name="white_card_cz_select_prompt">Long press a player\'s card(s) to select them</string>
     <string name="HTP_placeholder">How To Play Text Goes Here</string>
     <string name="submitted_card_count">Group #</string>
-
+    <string name="scoreboard_title">Scoreboard</string>
+    <string name="scoreboard_text">Player Score</string>
+    <string name="score_Read_Prompt">Tap hear to continue</string>
+    <string name="CAH_Title">Cards\nAgainst\nHumanity</string>
+    <string name="CAH_Subtitle">A party game\nfor horrible people.</string>
+    <string name="HTP_headerText">How To Play</string>
 
     <string-array name="array_num_players">
         <item>4</item>
@@ -55,7 +60,6 @@
         <item>19</item>
         <item>20</item>
     </string-array>
-
     <string-array name="array_max_awesome_points">
         <item>1</item>
         <item>2</item>
@@ -66,5 +70,7 @@
         <item>7</item>
         <item>8</item>
     </string-array>
+
+    <string name="title_activity_score_board">ScoreBoard</string>
 
 </resources>

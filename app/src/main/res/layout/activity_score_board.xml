@@ -1,0 +1,263 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/scoreRL"
+    android:clickable="true"
+    tools:context="com.cardsagainsthumanity.app.ScoreBoard">
+
+    <TextView
+        android:text="@string/scoreboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/scoretitle"
+        android:textSize="26sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scoreboardScroll"
+        android:layout_centerInParent="false"
+        android:fillViewport="false"
+        android:layout_below="@id/scoretitle"
+        android:layout_above="@+id/scoreReadPrompt">
+
+        <!--<LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scoreLL">-->
+
+    <!--<TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext1"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext2"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext3"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext4"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext5"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext6"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext7"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext8"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext9"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext10"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoretext11"
+        android:textSize="20sp"
+        android:layout_below="@+id/scoretext10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext12"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext13"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext13"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext14"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext14"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext15"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext15"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext16"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext16"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext17"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext17"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext18"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext18"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext19"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:text="@string/scoreboard_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoretext19"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/scoretext20"
+        android:textSize="20sp"/>-->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:height="420dp"
+                android:text="@string/scoreboard_text"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/scoretext"
+                android:textSize="20sp"/>
+
+        <!--</LinearLayout>-->
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/score_Read_Prompt"
+        android:id="@+id/scoreReadPrompt"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

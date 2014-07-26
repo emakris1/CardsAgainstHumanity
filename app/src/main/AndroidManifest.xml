@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo.NoActionBar" >
         <activity
             android:name="com.cardsagainsthumanity.app.MainMenu"
             android:label="@string/app_name"
@@ -57,6 +57,10 @@
         <activity
             android:name="com.cardsagainsthumanity.app.CardCzarSelect"
             android:label="@string/title_activity_card_czar_select" >
+        </activity>
+        <activity
+            android:name="com.cardsagainsthumanity.app.ScoreBoard"
+            android:label="@string/title_activity_score_board" >
         </activity>
     </application>
 
