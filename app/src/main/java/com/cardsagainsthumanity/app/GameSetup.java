@@ -70,6 +70,7 @@ public class GameSetup extends Activity
                 Game.numPlayers = Integer.parseInt(spPlayers.getSelectedItem().toString());
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
                 Game.gameWon = false;
+                Game.deckEmpty = false;
                 readInput();
                 createPlayers();
                 showDialog();

@@ -29,6 +29,7 @@ public class CardCzarRead extends Activity
             displayBlackCardText();
         }catch(Exception e){
             Game.deckEmpty = true;
+            Game.gameWon = true;
             showQuitDialog();
         }
 
@@ -89,28 +90,8 @@ public class CardCzarRead extends Activity
     public void showPlayerDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        if(Game.deckEmpty){
-            dialogBuilder.setTitle("Game Over");
 
-            if(Game.isDirty) {
-                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
-            }
 
-            else{
-                dialogBuilder.setMessage("The deck has been depleted.");
-            }
-
-            dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-            {
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
-                }
-            });
-        }
-
-        else {
 
             if(Game.isDirty) {
                 dialogBuilder.setTitle("Switch to Douchebag " + (Game.currentPlayer + 1));
@@ -128,7 +109,7 @@ public class CardCzarRead extends Activity
                     startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
                 }
             });
-        }
+
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
@@ -141,26 +122,46 @@ public class CardCzarRead extends Activity
     public void showQuitDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Quit to Main Menu");
-        dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
-        dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                startActivity(new Intent(getApplicationContext(), MainMenu.class));
-            }
-        });
 
-        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                dialog.cancel();
+        if(Game.deckEmpty){
+            dialogBuilder.setTitle("Game Over");
+
+            if(Game.isDirty) {
+                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
             }
-        });
+
+            else{
+                dialogBuilder.setMessage("The deck has been depleted.");
+            }
+
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
+            {
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
+                }
+            });
+        }
+
+        else {
+            dialogBuilder.setTitle("Quit to Main Menu");
+            dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                }
+            });
+
+            dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+        }
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 

@@ -113,7 +113,23 @@ public class CardCzarSelect extends Activity
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
-        if(Game.gameWon) {
+        if(Game.deckEmpty) {
+            dialogBuilder.setTitle("Game Over");
+            if (Game.isDirty) {
+                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
+            } else {
+                dialogBuilder.setMessage("The deck has been depleted.");
+            }
+
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
+                }
+            });
+        }
+
+        else if(Game.gameWon) {
             if (Game.isDirty) {
                 dialogBuilder.setTitle("Douchebag " + (Game.winningPlayer + 1));
                 dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe. This lucky asshole was the first to reach " + Game.maxAwesomePoints + " awesome points!");
@@ -127,26 +143,6 @@ public class CardCzarSelect extends Activity
             dialogBuilder.setCancelable(false);
             dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
-                }
-            });
-        }
-
-        else if(Game.deckEmpty){
-            dialogBuilder.setTitle("Game Over");
-            if(Game.isDirty) {
-                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
-            }
-
-            else{
-                dialogBuilder.setMessage("The deck has been depleted.");
-            }
-
-            dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-            {
-                public void onClick(DialogInterface dialog, int which)
-                {
                     startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
                 }
             });

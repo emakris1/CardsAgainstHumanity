@@ -184,6 +184,7 @@ public class PlayerCardSelection extends Activity
                                     tmpCard.setOwner(Game.currentPlayer);
                                     Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
                                 }catch(Exception e){
+                                    Game.gameWon = true;
                                     Game.deckEmpty = true;
                                 }
                             }
