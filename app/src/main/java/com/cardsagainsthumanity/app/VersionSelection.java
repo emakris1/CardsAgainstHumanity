@@ -5,11 +5,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * This is the screen on which the user will select which version of the game he or she will be playing.
@@ -115,10 +117,13 @@ public class VersionSelection extends Activity
             }
         });
 
-        AlertDialog alertDialog = dialogBuilder.create();
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
+
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount=1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
     }
 

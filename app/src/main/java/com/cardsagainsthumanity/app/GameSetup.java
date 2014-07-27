@@ -21,7 +21,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 /**
  * Activity Screen on which the user selects the number of players and the target number of awesome points.
