@@ -12,8 +12,16 @@
     <string name="black_card_placeholder">In an attempt to reach a wider audience, the Smithsonian Museum of Natural History has opened an interactive exhibit on _____.</string>
     <string name="black_card_read_prompt">Tap the card to continue</string>
     <string name="black_card_expand">View\n Black\n Card</string>
+    <string name="CAH_Title">Cards\nAgainst\nHumanity</string>
+    <string name="CAH_Subtitle">A party game\nfor horrible people.</string>
+    <string name="HTP_placeholder">How To Play Text Goes Here</string>
+    <string name="HTP_headerText">How To Play</string>
+    <string name="scoreboard_title">Scoreboard</string>
+    <string name="scoreboard_text">Player Score</string>
+    <string name="score_Read_Prompt">Tap the screen to continue</string>
     <string name="spinner_num_players">Choose the number of players</string>
     <string name="spinner_max_awesome_points">Choose the maximum number of Awesome Points</string>
+    <string name="submitted_card_count">Group #</string>
     <string name="text_dirty_deck">Full, uncensored card deck. Must be 18+.</string>
     <string name="text_clean_deck">No profane cards. Fun for all ages!</string>
     <string name="text_version_prompt">Please select your Deck</string>
@@ -29,17 +37,10 @@
     <string name="title_activity_card_czar_read">Card Czar Read</string>
     <string name="title_activity_player_card_selection">Player Card Selection</string>
     <string name="title_activity_card_czar_select">Card Czar Selection</string>
+    <string name="title_activity_score_board">ScoreBoard</string>
     <string name="white_card_placeholder">Saying "I disapprove of what you say, but I will defend to the death your right to say it" when you know you wouldn\'t</string>
     <string name="white_card_player_select_prompt">Long press your card(s) to submit them</string>
     <string name="white_card_cz_select_prompt">Long press a player\'s card(s) to select them</string>
-    <string name="HTP_placeholder">How To Play Text Goes Here</string>
-    <string name="submitted_card_count">Group #</string>
-    <string name="scoreboard_title">Scoreboard</string>
-    <string name="scoreboard_text">Player Score</string>
-    <string name="score_Read_Prompt">Tap the screen to continue</string>
-    <string name="CAH_Title">Cards\nAgainst\nHumanity</string>
-    <string name="CAH_Subtitle">A party game\nfor horrible people.</string>
-    <string name="HTP_headerText">How To Play</string>
 
     <string-array name="array_num_players">
         <item>4</item>
@@ -60,6 +61,7 @@
         <item>19</item>
         <item>20</item>
     </string-array>
+
     <string-array name="array_max_awesome_points">
         <item>1</item>
         <item>2</item>
@@ -70,7 +72,5 @@
         <item>7</item>
         <item>8</item>
     </string-array>
-
-    <string name="title_activity_score_board">ScoreBoard</string>
 
 </resources>
