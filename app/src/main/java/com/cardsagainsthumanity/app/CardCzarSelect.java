@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -109,102 +110,6 @@ public class CardCzarSelect extends Activity
         }
     }
 
-    public void showRoundWinnerDialog()
-    {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-
-        if(Game.deckEmpty) {
-            dialogBuilder.setTitle("Game Over");
-            if (Game.isDirty) {
-                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
-            } else {
-                dialogBuilder.setMessage("The deck has been depleted.");
-            }
-
-            dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
-                }
-            });
-        }
-
-        else if(Game.gameWon) {
-            if (Game.isDirty) {
-                dialogBuilder.setTitle("Douchebag " + (Game.winningPlayer + 1));
-                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe. This lucky asshole was the first to reach " + Game.maxAwesomePoints + " awesome points!");
-            }
-
-            else{
-                dialogBuilder.setTitle("Player " + (Game.winningPlayer + 1));
-                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe. This lucky person was the first to reach " + Game.maxAwesomePoints + " awesome points!");
-            }
-
-            dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
-                }
-            });
-        }
-
-        else {
-            dialogBuilder.setTitle("Round Won!");
-            if(Game.isDirty) {
-                dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
-            }
-
-            else{
-                dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
-            }
-
-            dialogBuilder.setCancelable(false);
-            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
-                }
-            });
-        }
-
-        AlertDialog alertDialog = dialogBuilder.create();
-        alertDialog.show();
-
-        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
-        alertDialog.getWindow().setAttributes(lp);
-    }
-
-    public void showQuitDialog()
-    {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Quit to Main Menu");
-        dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
-        dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                startActivity(new Intent(getApplicationContext(), MainMenu.class));
-            }
-        });
-
-        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
-            @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
-                dialog.cancel();
-            }
-        });
-        AlertDialog alertDialog = dialogBuilder.create();
-        alertDialog.show();
-
-        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
-        alertDialog.getWindow().setAttributes(lp);
-    }
-
     public void onWhiteCardClick()
     {
         // Get every White Card inside of the HorizontalScrollView and add a long click event
@@ -246,6 +151,115 @@ public class CardCzarSelect extends Activity
                 });
             }
         }
+    }
+
+    public void showRoundWinnerDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+
+        // Check whether Awesome Point(s) should be plural or not.
+        String awesomePoints;
+        if (Game.maxAwesomePoints > 1)
+            awesomePoints = Game.maxAwesomePoints + " Awesome Points!";
+        else
+            awesomePoints = "1 Awesome Point!";
+
+        if(Game.deckEmpty) {
+            dialogBuilder.setTitle("Game Over");
+            if (Game.isDirty) {
+                dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
+            } else {
+                dialogBuilder.setMessage("The deck has been depleted.");
+            }
+
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
+                }
+            });
+        }
+
+        else if(Game.gameWon) {
+            dialogBuilder.setTitle("Game Won!");
+            if (Game.isDirty) {
+                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe, Douchebag " + (Game.winningPlayer + 1)
+                        + ".\n\n This lucky bastard was the first to reach " + awesomePoints);
+            }
+
+            else{
+                dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe, Player " + (Game.winningPlayer + 1)
+                        + ".\n\n This lucky person was the first to reach " + awesomePoints);
+            }
+
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
+                }
+            });
+        }
+
+        else {
+            dialogBuilder.setTitle("Round Won!");
+            if(Game.isDirty) {
+                dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
+            }
+
+            else{
+                dialogBuilder.setMessage("Player " + (roundWinner + 1) + " is the Round Winner!");
+            }
+
+            dialogBuilder.setCancelable(false);
+            dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    startActivity(new Intent(getApplicationContext(), ScoreBoard.class));
+                }
+            });
+        }
+
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
+        alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
+    }
+
+    public void showQuitDialog()
+    {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Quit to Main Menu");
+        dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
+        dialogBuilder.setCancelable(false);
+        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                startActivity(new Intent(getApplicationContext(), MainMenu.class));
+            }
+        });
+
+        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
+        alertDialog.show();
+
+        WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
+        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        alertDialog.getWindow().setAttributes(lp);
     }
 
 }

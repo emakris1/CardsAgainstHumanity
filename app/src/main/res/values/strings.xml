@@ -17,8 +17,8 @@
     <string name="HTP_placeholder">How To Play Text Goes Here</string>
     <string name="HTP_headerText">How To Play</string>
     <string name="scoreboard_title">Scoreboard</string>
-    <string name="scoreboard_text">Player ##: # Awesome Points</string>
-    <string name="score_Read_Prompt">Tap the Scoreboard to continue</string>
+    <string name="scoreboard_text">Douchebag ##: # Awesome Points</string>
+    <string name="score_Read_Prompt">Tap the scoreboard to continue to the next round</string>
     <string name="spinner_num_players">Choose the number of players</string>
     <string name="spinner_max_awesome_points">Choose the maximum number of Awesome Points</string>
     <string name="submitted_card_count">Group #</string>

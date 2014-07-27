@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,21 +50,40 @@ public class ScoreBoard extends Activity
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        showQuitDialog();
+    }
+
     public void displayScores()
     {
-        TextView textView = (TextView) findViewById(R.id.txtScoreboardCard);
+        TextView txtScoreboard = (TextView) findViewById(R.id.txtScoreboardCard);
+        TextView txtPrompt = (TextView) findViewById(R.id.txtScoreboardPrompt);
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < Game.numPlayers; i++) {
             if(Game.isDirty) {
-                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + " Awesome Points\n");
+                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
+                if (Game.players.get(i).getNumAwesomePoints() != 1)
+                    sb.append(" Awesome Points\n");
+                else
+                    sb.append(" Awesome Point\n");
             }
             else{
-                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + " Awesome Points\n");
+                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
+                if (Game.players.get(i).getNumAwesomePoints() != 1)
+                    sb.append(" Awesome Points\n");
+                else
+                    sb.append(" Awesome Point\n");
             }
         }
+        txtScoreboard.setText(sb);
 
-        textView.setText(sb);
+        if (Game.gameWon)
+            txtPrompt.setText("Tap the scoreboard to return to the main menu");
+        else
+            txtPrompt.setText("Tap the scoreboard to continue to the next round");
     }
 
     public void onScoreboardClick()
@@ -74,12 +94,12 @@ public class ScoreBoard extends Activity
         iv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                if(!Game.gameWon) {
-                    showCardCzarDialog();
+                if(Game.gameWon) {
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
                 }
 
                 else{
-                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                    showCardCzarDialog();
                 }
             }
         });
@@ -89,13 +109,13 @@ public class ScoreBoard extends Activity
     {
         Game.switchCardCzar();
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Switch to Card Czar");
+        dialogBuilder.setTitle("New Round");
         if(Game.isDirty) {
-            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
+            dialogBuilder.setMessage("Please pass the device to\nthe new Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
         }
 
         else{
-            dialogBuilder.setMessage("Please pass the device to the new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+            dialogBuilder.setMessage("Please pass the device to\nthe new Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
         }
 
         dialogBuilder.setCancelable(false);
@@ -107,18 +127,14 @@ public class ScoreBoard extends Activity
             }
         });
 
-        AlertDialog alertDialog = dialogBuilder.create();
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
         lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
-    }
-
-    @Override
-    public void onBackPressed()
-    {
-        showQuitDialog();
     }
 
     public void showQuitDialog()
@@ -144,7 +160,10 @@ public class ScoreBoard extends Activity
                 dialog.cancel();
             }
         });
-        AlertDialog alertDialog = dialogBuilder.create();
+
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();

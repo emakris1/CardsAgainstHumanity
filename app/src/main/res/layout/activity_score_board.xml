@@ -73,14 +73,15 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="false"
                     android:id="@+id/txtScoreboardCard"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="false"
                     android:layout_centerHorizontal="true"
                     android:layout_alignParentTop="true"
-                    android:padding="20dp" />
+                    android:padding="20dp"
+                    android:gravity="center_horizontal" />
 
             </RelativeLayout>
         </LinearLayout>

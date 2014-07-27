@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -218,13 +219,13 @@ public class PlayerCardSelection extends Activity
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         if(Game.isDirty) {
-            dialogBuilder.setTitle("Switch to Douchebag " + (Game.currentPlayer + 1));
-            dialogBuilder.setMessage("Please pass the device to Douchebag " + (Game.currentPlayer + 1));
+            dialogBuilder.setTitle("Switch to Next Douchebag");
+            dialogBuilder.setMessage("Please pass the device to\nDouchebag " + (Game.currentPlayer + 1));
         }
 
         else{
-            dialogBuilder.setTitle("Switch to Player " + (Game.currentPlayer + 1));
-            dialogBuilder.setMessage("Please pass the device to Player " + (Game.currentPlayer + 1));
+            dialogBuilder.setTitle("Switch to Next Player");
+            dialogBuilder.setMessage("Please pass the device to\nPlayer " + (Game.currentPlayer + 1));
         }
 
         dialogBuilder.setCancelable(false);
@@ -236,7 +237,9 @@ public class PlayerCardSelection extends Activity
             }
         });
 
-        AlertDialog alertDialog = dialogBuilder.create();
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
@@ -249,11 +252,11 @@ public class PlayerCardSelection extends Activity
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
         if(Game.isDirty) {
-            dialogBuilder.setMessage("Please pass the device to the Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
+            dialogBuilder.setMessage("Please pass the device to\nthe Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
         }
 
         else{
-            dialogBuilder.setMessage("Please pass the device to the Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
+            dialogBuilder.setMessage("Please pass the device to\nthe Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
         }
 
         dialogBuilder.setCancelable(false);
@@ -265,7 +268,9 @@ public class PlayerCardSelection extends Activity
             }
         });
 
-        AlertDialog alertDialog = dialogBuilder.create();
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
@@ -296,7 +301,10 @@ public class PlayerCardSelection extends Activity
                 dialog.cancel();
             }
         });
-        AlertDialog alertDialog = dialogBuilder.create();
+
+        AlertDialog alertDialog = dialogBuilder.show();
+        TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
+        txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
