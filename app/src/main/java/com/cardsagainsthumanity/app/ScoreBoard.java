@@ -23,7 +23,7 @@ public class ScoreBoard extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_board);
         displayScores();
-        onClick();
+        onScoreboardClick();
     }
 
 
@@ -49,16 +49,15 @@ public class ScoreBoard extends Activity {
 
     public void displayScores(){
 
-        TextView textView = (TextView) findViewById(R.id.scoretext);
+        TextView textView = (TextView) findViewById(R.id.txtScoreboardCard);
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < Game.numPlayers; i++) {
             if(Game.isDirty) {
-                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + " Awesome Points\n");
             }
-
             else{
-                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + " Awesome Points\n");
             }
         }
 
@@ -66,12 +65,12 @@ public class ScoreBoard extends Activity {
 
     }
 
-    public void onClick()
+    public void onScoreboardClick()
     {
         // Show a dialog to pass the device to the next player.
-        final TextView textView = (TextView) findViewById(R.id.scoretext);
+        final ImageView iv = (ImageView) findViewById(R.id.imgScoreboardCard);
 
-        textView.setOnClickListener(new View.OnClickListener() {
+        iv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 if(!Game.gameWon) {
