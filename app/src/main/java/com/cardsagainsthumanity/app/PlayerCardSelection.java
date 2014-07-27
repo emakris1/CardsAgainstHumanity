@@ -25,7 +25,6 @@ public class PlayerCardSelection extends Activity
 
     ArrayList<WhiteCard> cardsToSubmit;
     ArrayList<Integer> removeIndex;
-    int numCardsSubmitted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,7 +34,7 @@ public class PlayerCardSelection extends Activity
         onBlackCardClick();
         setPlayerInfo();
         displayWhiteCardText();
-        onWhiteCardLongPress();
+        onWhiteCardClick();
     }
 
 
@@ -115,10 +114,9 @@ public class PlayerCardSelection extends Activity
         TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
         player.setText("Player: " + (Game.currentPlayer + 1));
         points.setText("Awesome Points: " + Game.players.get(Game.currentPlayer).getNumAwesomePoints());
-        submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
+        submitted.setText("Submit Cards: " + "0" + "/" + Game.getCurrentBlackCard().getNumPrompts());
         cardsToSubmit = new ArrayList<WhiteCard>();
         removeIndex = new ArrayList<Integer>();
-        numCardsSubmitted = 0;
     }
 
     public void displayWhiteCardText()
@@ -143,7 +141,7 @@ public class PlayerCardSelection extends Activity
         }
     }
 
-    public void onWhiteCardLongPress()
+    public void onWhiteCardClick()
     {
         // Get every White Card inside of the HorizontalScrollView and add a long click event
         // listener that submits the selected card and disables it.
@@ -157,13 +155,12 @@ public class PlayerCardSelection extends Activity
             final int index = i;    // white card index
             if (imgWhiteCard != null)
             {
-                imgWhiteCard.setOnLongClickListener(new View.OnLongClickListener()
+                imgWhiteCard.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
-                    public boolean onLongClick(View view)
+                    public void onClick(View view)
                     {
                         cardsToSubmit.add(Game.players.get(Game.currentPlayer).getPlayerCard(index));
-                        numCardsSubmitted++;
                         removeIndex.add(index);
 
                         imgWhiteCard.setEnabled(false);
@@ -173,9 +170,9 @@ public class PlayerCardSelection extends Activity
                         txtWhiteCard.setTextColor(Color.GRAY);
 
                         showToast("Card Submitted!");
-                        submitted.setText("Submit Cards: " + numCardsSubmitted + "/" + Game.getCurrentBlackCard().getNumPrompts());
+                        submitted.setText("Submit Cards: " + cardsToSubmit.size() + "/" + Game.getCurrentBlackCard().getNumPrompts());
 
-                        if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
+                        if (cardsToSubmit.size() == Game.currentBlackCard.getNumPrompts())
                         {
                             for(int i = 0; i < removeIndex.size(); i++) {
                                 Game.players.get(Game.currentPlayer).removePlayerCard(removeIndex.get(i));
@@ -200,8 +197,6 @@ public class PlayerCardSelection extends Activity
                                showPlayerDialog();
                             }
                         }
-
-                        return true;
                     }
                 });
             }

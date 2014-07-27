@@ -38,7 +38,7 @@ public class CardCzarSelect extends Activity
         Collections.shuffle(Game.submittedCards);
         displayBlackCardText();
         displaySubmittedCardText();
-        onWhiteCardLongPress();
+        onWhiteCardClick();
     }
 
 
@@ -205,7 +205,7 @@ public class CardCzarSelect extends Activity
         alertDialog.getWindow().setAttributes(lp);
     }
 
-    public void onWhiteCardLongPress()
+    public void onWhiteCardClick()
     {
         // Get every White Card inside of the HorizontalScrollView and add a long click event
         // listener that submits the selected card and disables it.
@@ -220,9 +220,9 @@ public class CardCzarSelect extends Activity
 
             if (imgWhiteCard != null)
             {
-                imgWhiteCard.setOnLongClickListener(new View.OnLongClickListener() {
+                imgWhiteCard.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public boolean onLongClick(View view) {
+                    public void onClick(View view) {
                         for (int j = 0; j < Game.submittedCards.size(); j++) {
                             for (int k = 0; k < Game.currentBlackCard.getNumPrompts(); k++) {
                                 if (txtWhiteCard.getText() == Game.submittedCards.get(j).get(k).getText()) {
@@ -242,21 +242,10 @@ public class CardCzarSelect extends Activity
                         }
 
                         showRoundWinnerDialog();
-                        return true;
                     }
                 });
             }
         }
-    }
-
-    public StringBuilder displayScoreboard()
-    {
-        StringBuilder text = new StringBuilder();
-        text.append("SCOREBOARD:\n");
-        text.append("==========\n");
-        for (int i = 0; i < Game.numPlayers; i++)
-            text.append(Game.players.get(i).toString());
-        return text;
     }
 
 }

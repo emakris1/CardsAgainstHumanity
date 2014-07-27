@@ -44,7 +44,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="false" />
+        android:layout_alignParentRight="false"
+        android:textSize="12dp" />
 
     <HorizontalScrollView
         android:layout_width="wrap_content"

@@ -39,8 +39,8 @@
     <string name="title_activity_card_czar_select">Card Czar Selection</string>
     <string name="title_activity_score_board">ScoreBoard</string>
     <string name="white_card_placeholder">Saying "I disapprove of what you say, but I will defend to the death your right to say it" when you know you wouldn\'t</string>
-    <string name="white_card_player_select_prompt">Tap and hold your card(s) to submit them</string>
-    <string name="white_card_cz_select_prompt">Tap and hold a player\'s card(s) to select them</string>
+    <string name="white_card_player_select_prompt">Tap your card(s) to submit them</string>
+    <string name="white_card_cz_select_prompt">Tap any card of a player\'s hand to select them as the winner</string>
 
     <string-array name="array_num_players">
         <item>4</item>

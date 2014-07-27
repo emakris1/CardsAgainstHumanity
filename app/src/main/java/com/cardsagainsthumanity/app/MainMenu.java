@@ -79,7 +79,7 @@ public class MainMenu extends Activity
     public void showQuitDialog()
     {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Exit Cards Against Humanity");
+        dialogBuilder.setTitle("Exit Game");
         dialogBuilder.setMessage("Are you sure you want to exit Cards Against Humanity?");
         dialogBuilder.setCancelable(false);
         dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
