@@ -178,7 +178,7 @@ public class PlayerCardSelection extends Activity
                         if (numCardsSubmitted == Game.currentBlackCard.getNumPrompts())
                         {
                             for(int i = 0; i < removeIndex.size(); i++) {
-                                Game.players.get(Game.currentPlayer).removePlayerCard(i);
+                                Game.players.get(Game.currentPlayer).removePlayerCard(removeIndex.get(i));
                                 try {
                                     WhiteCard tmpCard = Game.whiteDeck.remove();
                                     tmpCard.setOwner(Game.currentPlayer);

@@ -58,32 +58,12 @@ public class ScoreBoard extends Activity {
             }
 
             else{
-                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
             }
         }
 
         textView.setText(sb);
 
-        /*for(int i = 0; i < linearLayout.getChildCount(); i++){
-            textView = (TextView) linearLayout.getChildAt(i);
-            textView.setVisibility(View.VISIBLE);
-        }
-
-        for(int i = linearLayout.getChildCount() - 1; i >= Game.numPlayers; i--){
-            textView = (TextView) linearLayout.getChildAt(i);
-            textView.setVisibility(View.GONE);
-        }*/
-
-        /*for(int i = 0; i < Game.numPlayers; i++){
-            textView = (TextView) linearLayout.getChildAt(i);
-            if(Game.isDirty) {
-                textView.setText("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
-            }
-
-            else{
-                textView.setText("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
-            }
-        }*/
     }
 
     public void onClick()
@@ -93,7 +73,14 @@ public class ScoreBoard extends Activity {
 
         textView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                showCardCzarDialog();
+
+                if(!Game.gameWon) {
+                    showCardCzarDialog();
+                }
+
+                else{
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                }
             }
         });
     }
@@ -115,13 +102,7 @@ public class ScoreBoard extends Activity {
         {
             public void onClick(DialogInterface dialog, int which)
             {
-                if(!Game.gameWon) {
                     startActivity(new Intent(getApplicationContext(), CardCzarRead.class));
-                }
-
-                else{
-                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
-                }
             }
         });
 

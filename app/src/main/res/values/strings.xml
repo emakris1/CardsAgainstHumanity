@@ -36,7 +36,7 @@
     <string name="submitted_card_count">Group #</string>
     <string name="scoreboard_title">Scoreboard</string>
     <string name="scoreboard_text">Player Score</string>
-    <string name="score_Read_Prompt">Tap hear to continue</string>
+    <string name="score_Read_Prompt">Tap the screen to continue</string>
     <string name="CAH_Title">Cards\nAgainst\nHumanity</string>
     <string name="CAH_Subtitle">A party game\nfor horrible people.</string>
     <string name="HTP_headerText">How To Play</string>
