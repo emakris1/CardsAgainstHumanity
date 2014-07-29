@@ -9,14 +9,29 @@
     android:clickable="true"
     tools:context="com.cardsagainsthumanity.app.ScoreBoard">
 
+    <TextView
+        android:text="@string/scoreboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtScoreboardTitle"
+        android:textSize="28sp"
+        android:layout_alignParentTop="true" />
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/svScoreBoard"
-        android:layout_centerInParent="false"
         android:fillViewport="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:layout_below="@+id/txtScoreboardTitle"
         android:layout_above="@+id/txtScoreboardPrompt"
-        android:layout_alignParentTop="true">
+        android:layout_centerHorizontal="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -25,33 +40,15 @@
             android:id="@+id/llScoreboard">
 
             <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/rlScoreboardTitle"
-                android:layout_marginBottom="8dp">
-
-                <TextView
-                    android:text="@string/scoreboard_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/txtScoreboardTitle"
-                    android:textSize="28sp"
-                    android:layout_alignParentTop="true" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rlScoreboardCard">
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/rlScoreboardCard1"
+                android:layout_margin="8dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/imgScoreboardCard"
+                    android:id="@+id/imgScoreboardCard1"
                     android:src="@drawable/whitecard"
                     android:adjustViewBounds="true"
                     android:layout_centerHorizontal="true"
@@ -59,12 +56,7 @@
                     android:layout_alignParentRight="false"
                     android:layout_alignParentLeft="false"
                     android:layout_alignParentTop="false"
-                    android:layout_alignWithParentIfMissing="false"
-                    android:layout_alignTop="@+id/txtScoreboardCard"
-                    android:layout_alignLeft="@+id/txtScoreboardCard"
-                    android:layout_alignRight="@+id/txtScoreboardCard"
-                    android:layout_alignBottom="@+id/txtScoreboardCard"
-                    android:scaleType="fitXY" />
+                    android:layout_alignWithParentIfMissing="false" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -72,15 +64,53 @@
                     android:text="@string/scoreboard_text"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="false"
-                    android:id="@+id/txtScoreboardCard"
-                    android:textSize="18sp"
+                    android:id="@+id/txtScoreboardCard1"
+                    android:textSize="26sp"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="false"
-                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentTop="true"
-                    android:padding="20dp"
+                    android:layout_margin="20dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:id="@+id/rlScoreboardCard2"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgScoreboardCard2"
+                    android:src="@drawable/whitecard"
+                    android:adjustViewBounds="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignWithParentIfMissing="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scoreboard_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="false"
+                    android:id="@+id/txtScoreboardCard2"
+                    android:textSize="26sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="20dp"
+                    android:layout_centerInParent="true"
                     android:gravity="center_horizontal" />
 
             </RelativeLayout>

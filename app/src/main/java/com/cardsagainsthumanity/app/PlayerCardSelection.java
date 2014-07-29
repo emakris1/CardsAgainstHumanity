@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -80,15 +81,14 @@ public class PlayerCardSelection extends Activity
         {
             public void onClick(View v)
             {
-                imgBlackCardSmall.setVisibility(View.GONE);
-                txtBlackCardSmall.setVisibility(View.GONE);
+                imgBlackCardSmall.setVisibility(View.INVISIBLE);
+                txtBlackCardSmall.setVisibility(View.INVISIBLE);
                 txtCurrentPlayer.setVisibility(View.GONE);
                 txtCurrentPoints.setVisibility(View.GONE);
                 txtSubmitted.setVisibility(View.GONE);
                 imgBlackCardLarge.setVisibility(View.VISIBLE);
                 txtBlackCardLarge.setVisibility(View.VISIBLE);
                 txtBlackCardLarge.setText(Game.currentBlackCard.getText());
-
             }
         });
 
@@ -103,7 +103,6 @@ public class PlayerCardSelection extends Activity
                 txtSubmitted.setVisibility(View.VISIBLE);
                 imgBlackCardLarge.setVisibility(View.GONE);
                 txtBlackCardLarge.setVisibility(View.GONE);
-
             }
         });
     }

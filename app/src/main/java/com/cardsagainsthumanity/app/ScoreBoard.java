@@ -58,27 +58,47 @@ public class ScoreBoard extends Activity
 
     public void displayScores()
     {
-        TextView txtScoreboard = (TextView) findViewById(R.id.txtScoreboardCard);
+        RelativeLayout rlScoreboard1 = (RelativeLayout) findViewById(R.id.rlScoreboardCard1);
+        RelativeLayout rlScoreboard2 = (RelativeLayout) findViewById(R.id.rlScoreboardCard2);
+        TextView txtScoreboard1 = (TextView) findViewById(R.id.txtScoreboardCard1);
+        TextView txtScoreboard2 = (TextView) findViewById(R.id.txtScoreboardCard2);
         TextView txtPrompt = (TextView) findViewById(R.id.txtScoreboardPrompt);
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb1 = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
 
-        for (int i = 0; i < Game.numPlayers; i++) {
-            if(Game.isDirty) {
-                sb.append("Douchebag " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
-                if (Game.players.get(i).getNumAwesomePoints() != 1)
-                    sb.append(" Awesome Points\n");
+        if (Game.numPlayers <= 10)
+        {
+            rlScoreboard1.setVisibility(View.VISIBLE);
+            rlScoreboard2.setVisibility(View.GONE);
+
+            for (int i = 0; i < Game.numPlayers; i++)
+                if (Game.isDirty)
+                    sb1.append("Douchebag " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
                 else
-                    sb.append(" Awesome Point\n");
-            }
-            else{
-                sb.append("Player " + (i + 1) + ": " + Game.players.get(i).getNumAwesomePoints());
-                if (Game.players.get(i).getNumAwesomePoints() != 1)
-                    sb.append(" Awesome Points\n");
-                else
-                    sb.append(" Awesome Point\n");
-            }
+                    sb1.append("Player " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+
+            txtScoreboard1.setText(sb1);
         }
-        txtScoreboard.setText(sb);
+        else
+        {
+            rlScoreboard1.setVisibility(View.VISIBLE);
+            rlScoreboard2.setVisibility(View.VISIBLE);
+
+            for (int i = 0; i < 10; i++)
+                if (Game.isDirty)
+                    sb1.append("Douchebag " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+                else
+                    sb1.append("Player " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+
+            for (int i = 10; i < Game.numPlayers; i++)
+                if (Game.isDirty)
+                    sb2.append("Douchebag " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+                else
+                    sb2.append("Player " + String.format("%02d",(i+1)) + ": " + Game.players.get(i).getNumAwesomePoints() + "\n");
+
+            txtScoreboard1.setText(sb1);
+            txtScoreboard2.setText(sb2);
+        }
 
         if (Game.gameWon)
             txtPrompt.setText("Tap the scoreboard to return to the main menu");
@@ -89,9 +109,23 @@ public class ScoreBoard extends Activity
     public void onScoreboardClick()
     {
         // Show a dialog to pass the device to the next player.
-        final ImageView iv = (ImageView) findViewById(R.id.imgScoreboardCard);
+        final ImageView iv1 = (ImageView) findViewById(R.id.imgScoreboardCard1);
+        final ImageView iv2 = (ImageView) findViewById(R.id.imgScoreboardCard2);
 
-        iv.setOnClickListener(new View.OnClickListener() {
+        iv1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                if(Game.gameWon) {
+                    startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                }
+
+                else{
+                    showCardCzarDialog();
+                }
+            }
+        });
+
+        iv2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 if(Game.gameWon) {
