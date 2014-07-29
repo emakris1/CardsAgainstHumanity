@@ -16,8 +16,16 @@ public class BlackCard
         this.numPrompts = n;
     }
 
-    public String getText() {return this.text;}
+    public String getText() {
 
-    public Integer getNumPrompts() {return this.numPrompts;}
+        return this.text;
+
+    }
+
+    public Integer getNumPrompts() {
+
+        return this.numPrompts;
+
+    }
 
 }

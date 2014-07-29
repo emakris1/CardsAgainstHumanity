@@ -25,60 +25,66 @@ import java.util.Collections;
  * use FrameLayout.setVisibility(View.GONE); to disable cards that aren't related to submitted cards
  */
 
-public class CardCzarSelect extends Activity
-{
+public class CardCzarSelect extends Activity{
 
     public int roundWinner;
     private boolean found = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_czar_select);
         Collections.shuffle(Game.submittedCards);
         displayBlackCardText();
         displaySubmittedCardText();
         onWhiteCardClick();
+
     }
 
-
+    // Inflate the menu; this adds items to the action bar if it is present.
+    //getMenuInflater().inflate(R.menu.card_czar_select, menu);
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.card_czar_select, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+
         return true;
+
     }
 
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
-        if (id == R.id.action_settings)
+
+        if (id == R.id.action_settings) {
             return true;
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed(){
+
         showQuitDialog();
+
     }
 
-    public void displayBlackCardText()
-    {
+    public void displayBlackCardText(){
+
         final TextView txtBlackCardLarge = (TextView) findViewById(R.id.txtCZBlackCardLarge);
         txtBlackCardLarge.setText(Game.getCurrentBlackCard().getText());
+
     }
 
     //Only include 21 cards in the CardCzarSelect xml. Only allow eight players to play
+    public void displaySubmittedCardText(){
 
-    public void displaySubmittedCardText()
-    {
         ArrayList<RelativeLayout> rl = new ArrayList<RelativeLayout>();
         ArrayList<TextView> txtWhiteCards = new ArrayList<TextView>();
         ArrayList<TextView> txtGroups = new ArrayList<TextView>();
@@ -110,21 +116,19 @@ public class CardCzarSelect extends Activity
         }
     }
 
-    public void onWhiteCardClick()
-    {
-        // Get every White Card inside of the HorizontalScrollView and add a long click event
-        // listener that submits the selected card and disables it.
+    // Get every White Card inside of the HorizontalScrollView and add a long click event
+    // listener that submits the selected card and disables it
+    public void onWhiteCardClick(){
+
         LinearLayout ll = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
 
-        for (int i = 0; i < ll.getChildCount(); i++)
-        {
+        for (int i = 0; i < ll.getChildCount(); i++){
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
             final ImageView imgWhiteCard = (ImageView) rl.getChildAt(0);
             final TextView txtWhiteCard = (TextView) rl.getChildAt(1);
             final int index = i;    // white card index
 
-            if (imgWhiteCard != null)
-            {
+            if (imgWhiteCard != null){
                 imgWhiteCard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -138,8 +142,9 @@ public class CardCzarSelect extends Activity
                                 }
                             }
 
-                            if (found)
+                            if (found) {
                                 break;
+                            }
                         }
 
                         if (Game.checkAwesomePoints()) {
@@ -151,24 +156,32 @@ public class CardCzarSelect extends Activity
                 });
             }
         }
+
     }
 
-    public void showRoundWinnerDialog()
-    {
+    public void showRoundWinnerDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         // Check whether Awesome Point(s) should be plural or not.
         String awesomePoints;
-        if (Game.maxAwesomePoints > 1)
+
+        if (Game.maxAwesomePoints > 1) {
             awesomePoints = Game.maxAwesomePoints + " Awesome Points!";
-        else
+        }
+
+        else {
             awesomePoints = "1 Awesome Point!";
+        }
 
         if(Game.deckEmpty) {
             dialogBuilder.setTitle("Game Over");
+
             if (Game.isDirty) {
                 dialogBuilder.setMessage("The deck has been depleted. Fuck you.");
-            } else {
+            }
+
+            else {
                 dialogBuilder.setMessage("The deck has been depleted.");
             }
 
@@ -182,9 +195,10 @@ public class CardCzarSelect extends Activity
 
         else if(Game.gameWon) {
             dialogBuilder.setTitle("Game Won!");
+
             if (Game.isDirty) {
                 dialogBuilder.setMessage("All hail the Supreme Ruler of the Universe, Douchebag " + (Game.winningPlayer + 1)
-                        + ".\n\n This lucky bastard was the first to reach " + awesomePoints);
+                        + ".\n\n This lucky asshole was the first to reach " + awesomePoints);
             }
 
             else{
@@ -202,6 +216,7 @@ public class CardCzarSelect extends Activity
 
         else {
             dialogBuilder.setTitle("Round Won!");
+
             if(Game.isDirty) {
                 dialogBuilder.setMessage("Douchebag " + (roundWinner + 1) + " is the Round Winner!");
             }
@@ -224,16 +239,17 @@ public class CardCzarSelect extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
     }
 
-    public void showQuitDialog()
-    {
+    public void showQuitDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Quit to Main Menu");
         dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
         dialogBuilder.setCancelable(false);
+
         dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
         {
             @Override
@@ -258,8 +274,9 @@ public class CardCzarSelect extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
 }

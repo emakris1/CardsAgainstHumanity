@@ -17,37 +17,41 @@ import android.widget.TextView;
  * This is the screen on which the user will select which version of the game he or she will be playing.
  */
 
-public class VersionSelection extends Activity
-{
+public class VersionSelection extends Activity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_version_selection);
         onDirtyButtonClick();
         onCleanButtonClick();
+
     }
 
-
+    // Inflate the menu; this adds items to the action bar if it is present.
+    //getMenuInflater().inflate(R.menu.version_selection, menu);
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.version_selection, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+
         return true;
+
     }
 
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onOptionsItemSelected(MenuItem item){
+
         int id = item.getItemId();
-        if (id == R.id.action_settings)
+
+        if (id == R.id.action_settings) {
             return true;
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
     /**
@@ -55,37 +59,35 @@ public class VersionSelection extends Activity
      * the user's age appears. Game.isDirty is set to true or false depending on the answer,
      * and the GameSetup activity is started.
      */
-    public void onDirtyButtonClick()
-    {
+    public void onDirtyButtonClick(){
+
         Button btn = (Button) findViewById(R.id.btnDirty);
 
-        btn.setOnClickListener(new View.OnClickListener()
-        {
+        btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view){
                 showDialog();
             }
         });
+
     }
 
     /**
      * Sets up the Clean Deck button so that when it is clicked, Game.isDirty is set to false
      * and the GameSetup activity is started.
      */
-    public void onCleanButtonClick()
-    {
+    public void onCleanButtonClick(){
+
         Button btn = (Button) findViewById(R.id.btnClean);
 
-        btn.setOnClickListener(new View.OnClickListener()
-        {
+        btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view){
                 Game.isDirty = false;
                 startActivity(new Intent(getApplicationContext(), GameSetup.class));
             }
         });
+
     }
 
     /**
@@ -93,25 +95,21 @@ public class VersionSelection extends Activity
      * If they click yes, Game.isDirty is set to true; otherwise, it is set to false.
      * From here, the GameSetup activity is started.
      */
-    public void showDialog()
-    {
+    public void showDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Age Verification");
         dialogBuilder.setMessage("Are you at least 18 years old?");
 
-        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
+        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
                 Game.isDirty = false;
                 startActivity(new Intent(getApplicationContext(), GameSetup.class));
             }
         });
 
-        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
+        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
                 Game.isDirty = true;
                 startActivity(new Intent(getApplicationContext(), GameSetup.class));
             }
@@ -123,8 +121,9 @@ public class VersionSelection extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
 }

@@ -6,41 +6,71 @@ import java.util.ArrayList;
  * Class with fields and methods for each player of the game.
  */
 
-public class Player
-{
+public class Player{
 
     private Integer playerNum;
     private Integer numAwesomePoints;
     private ArrayList<WhiteCard> playerCards = new ArrayList<WhiteCard>();
 
-    public Player(Integer n)
-    {
+    public Player(Integer n){
+
         this.playerNum = n;
         this.numAwesomePoints = 0;
+
     }
 
-    public Integer getPlayerNum() {return this.playerNum;}
+    public Integer getPlayerNum() {
 
-    public Integer getNumAwesomePoints() {return this.numAwesomePoints;}
+        return this.playerNum;
 
-    public ArrayList<WhiteCard> getPlayerCards() {return this.playerCards;}
+    }
 
-    public WhiteCard getPlayerCard(int index) {return this.playerCards.get(index);}
+    public Integer getNumAwesomePoints() {
 
-    public void incAwesomePoints() {this.numAwesomePoints++;}
+        return this.numAwesomePoints;
 
-    public void addPlayerCard(WhiteCard card) {playerCards.add(card);}
+    }
+
+    public ArrayList<WhiteCard> getPlayerCards() {
+
+        return this.playerCards;
+
+    }
+
+    public WhiteCard getPlayerCard(int index) {
+
+        return this.playerCards.get(index);
+
+    }
+
+    public void incAwesomePoints() {
+
+        this.numAwesomePoints++;
+
+    }
+
+    public void addPlayerCard(WhiteCard card) {
+
+        playerCards.add(card);
+
+    }
 
     /**
      * Method to be used when a player submits a white card from the GameScreen
      * @param index
      * @return WhiteCard
      */
-    public WhiteCard removePlayerCard(int index){return this.playerCards.remove(index);}
+    public WhiteCard removePlayerCard(int index){
 
-    public String toString()
-    {
-        return "Player " + (this.getPlayerNum() + 1) + ": " + this.getNumAwesomePoints() + " Awesome Points\n";
+        return this.playerCards.remove(index);
+
     }
+
+    public String toString(){
+
+        return "Player " + (this.getPlayerNum() + 1) + ": " + this.getNumAwesomePoints() + " Awesome Points\n";
+
+    }
+
 }
 

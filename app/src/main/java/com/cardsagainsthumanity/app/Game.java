@@ -28,50 +28,70 @@ public class Game
      * Method to alternate the role of card czar.
      * To be called at the end of each round.
      */
-    public static void switchCardCzar()
-    {
-        if (currentCardCzar < numPlayers - 1)
+    public static void switchCardCzar(){
+
+        if (currentCardCzar < numPlayers - 1) {
             currentCardCzar++;
-        else
+        }
+
+        else {
             currentCardCzar = 0;
+        }
+
     }
 
     /**
      * Method to alternate the current player
      * To be called after each player's turn.
      */
-    public static void switchPlayer()
-    {
-        if (currentPlayer < numPlayers - 1)
+    public static void switchPlayer(){
+
+        if (currentPlayer < numPlayers - 1) {
             currentPlayer++;
-        else
+        }
+
+        else {
             currentPlayer = 0;
+        }
+
     }
 
     /**
      * Method to reset the current player on a new round.
      * To be called at the end of each round.
      */
-    public static void setNewRoundPlayer()
-    {
-        if (currentCardCzar < numPlayers - 1)
+    public static void setNewRoundPlayer(){
+
+        if (currentCardCzar < numPlayers - 1) {
             currentPlayer = currentCardCzar + 1;
-        else
+        }
+
+        else {
             Game.currentPlayer = 0;
+        }
+
     }
 
     /**
      * Method to set the current black card;
      * to be called at the beginning of each round
      */
-    public static void setCurrentBlackCard() {currentBlackCard = blackDeck.remove();}
+    public static void setCurrentBlackCard(){
+
+        currentBlackCard = blackDeck.remove();
+
+    }
 
     /**
      * Method to get the current black card;
      * to be called whenever the black card
      * is rendered on screen.
      */
-    public static BlackCard getCurrentBlackCard() {return currentBlackCard;}
+    public static BlackCard getCurrentBlackCard(){
+
+        return currentBlackCard;
+
+    }
 
 
     /**
@@ -80,8 +100,11 @@ public class Game
      * The selected card to be used as the parameter
      * @param cd
      */
-    public static void selectWhiteCard(ArrayList<WhiteCard> cd)
-    {players.get(cd.get(0).getOwner()).incAwesomePoints();}
+    public static void selectWhiteCard(ArrayList<WhiteCard> cd){
+
+        players.get(cd.get(0).getOwner()).incAwesomePoints();
+
+    }
 
     /**
      * Method to check if the target number of Awesome points has been reached.
@@ -89,17 +112,17 @@ public class Game
      * This will be used to check if the game is over.
      * @return
      */
-    public static Boolean checkAwesomePoints()
-    {
-        for (int i = 0; i < numPlayers; i++)
-        {
-            if (players.get(i).getNumAwesomePoints() == maxAwesomePoints)
-            {
+    public static Boolean checkAwesomePoints(){
+
+        for (int i = 0; i < numPlayers; i++){
+            if (players.get(i).getNumAwesomePoints() == maxAwesomePoints){
                 winningPlayer = i;
                 return true;
             }
         }
+
         return false;
+
     }
 
 }

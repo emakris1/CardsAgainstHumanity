@@ -22,52 +22,57 @@ import android.graphics.Color;
 import java.util.ArrayList;
 
 
-public class PlayerCardSelection extends Activity
-{
+public class PlayerCardSelection extends Activity{
 
     ArrayList<WhiteCard> cardsToSubmit;
     ArrayList<Integer> removeIndex;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_card_selection);
         onBlackCardClick();
         setPlayerInfo();
         displayWhiteCardText();
         onWhiteCardClick();
+
     }
 
-
+    // Inflate the menu; this adds items to the action bar if it is present.
+    //getMenuInflater().inflate(R.menu.player_card_selection, menu);
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.player_card_selection, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+
         return true;
+
     }
 
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onOptionsItemSelected(MenuItem item){
+
         int id = item.getItemId();
-        if (id == R.id.action_settings)
+
+        if (id == R.id.action_settings) {
             return true;
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed(){
+
         showQuitDialog();
+
     }
 
-    public void onBlackCardClick()
-    {
+    public void onBlackCardClick(){
+
         final ImageView imgBlackCardSmall = (ImageView) findViewById(R.id.imgPlayerBlackCardSmall);
         final TextView txtBlackCardSmall = (TextView) findViewById(R.id.txtPlayerBlackCardSmall);
         final ImageView imgBlackCardLarge = (ImageView) findViewById(R.id.imgPlayerBlackCardLarge);
@@ -77,10 +82,8 @@ public class PlayerCardSelection extends Activity
         final TextView txtCurrentPoints = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
         final TextView txtSubmitted = (TextView) findViewById(R.id.txtSubmittedCards);
 
-        imgBlackCardSmall.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        imgBlackCardSmall.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
                 imgBlackCardSmall.setVisibility(View.INVISIBLE);
                 txtBlackCardSmall.setVisibility(View.INVISIBLE);
                 txtCurrentPlayer.setVisibility(View.GONE);
@@ -92,10 +95,8 @@ public class PlayerCardSelection extends Activity
             }
         });
 
-        imgBlackCardLarge.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        imgBlackCardLarge.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
                 imgBlackCardSmall.setVisibility(View.VISIBLE);
                 txtBlackCardSmall.setVisibility(View.VISIBLE);
                 txtCurrentPlayer.setVisibility(View.VISIBLE);
@@ -105,10 +106,11 @@ public class PlayerCardSelection extends Activity
                 txtBlackCardLarge.setVisibility(View.GONE);
             }
         });
+
     }
 
-    public void setPlayerInfo()
-    {
+    public void setPlayerInfo(){
+
         TextView player = (TextView) findViewById(R.id.txtCurrentPlayerNum);
         TextView points = (TextView) findViewById(R.id.txtCurrentPlayerPoints);
         TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
@@ -117,15 +119,15 @@ public class PlayerCardSelection extends Activity
         submitted.setText("Submit Cards: " + "0" + "/" + Game.getCurrentBlackCard().getNumPrompts());
         cardsToSubmit = new ArrayList<WhiteCard>();
         removeIndex = new ArrayList<Integer>();
+
     }
 
-    public void displayWhiteCardText()
-    {
-        // Get every White Card inside of the HorizontalScrollView, make then visible, set
-        // their text to correspond to the current player's cards, and make the text black.
+    // Get every White Card inside of the HorizontalScrollView, make then visible, set
+    // their text to correspond to the current player's cards, and make the text black.
+    public void displayWhiteCardText(){
+
         LinearLayout ll = (LinearLayout) findViewById(R.id.LLPlayerCards);
-        for (int i = 0; i < ll.getChildCount(); i++)
-        {
+        for (int i = 0; i < ll.getChildCount(); i++){
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
             rl.setVisibility(View.VISIBLE);
 
@@ -139,27 +141,24 @@ public class PlayerCardSelection extends Activity
             txtWhiteCard.setTextColor(Color.BLACK);
             txtWhiteCard.setText(Game.players.get(Game.currentPlayer).getPlayerCard(i).getText());
         }
+
     }
 
-    public void onWhiteCardClick()
-    {
-        // Get every White Card inside of the HorizontalScrollView and add a long click event
-        // listener that submits the selected card and disables it.
+    // Get every White Card inside of the HorizontalScrollView and add a long click event
+    // listener that submits the selected card and disables it.
+    public void onWhiteCardClick(){
+
         LinearLayout ll = (LinearLayout) findViewById(R.id.LLPlayerCards);
         final TextView submitted = (TextView) findViewById(R.id.txtSubmittedCards);
-        for (int i = 0; i < ll.getChildCount(); i++)
-        {
+        for (int i = 0; i < ll.getChildCount(); i++){
             RelativeLayout rl = (RelativeLayout) ll.getChildAt(i);
             final ImageView imgWhiteCard = (ImageView) rl.getChildAt(0);
             final TextView txtWhiteCard = (TextView) rl.getChildAt(1);
             final int index = i;    // white card index
-            if (imgWhiteCard != null)
-            {
-                imgWhiteCard.setOnClickListener(new View.OnClickListener()
-                {
+            if (imgWhiteCard != null){
+                imgWhiteCard.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View view)
-                    {
+                    public void onClick(View view) {
                         cardsToSubmit.add(Game.players.get(Game.currentPlayer).getPlayerCard(index));
                         removeIndex.add(index);
 
@@ -172,15 +171,14 @@ public class PlayerCardSelection extends Activity
                         showToast("Card Submitted!");
                         submitted.setText("Submit Cards: " + cardsToSubmit.size() + "/" + Game.getCurrentBlackCard().getNumPrompts());
 
-                        if (cardsToSubmit.size() == Game.currentBlackCard.getNumPrompts())
-                        {
-                            for(int i = 0; i < removeIndex.size(); i++) {
+                        if (cardsToSubmit.size() == Game.currentBlackCard.getNumPrompts()) {
+                            for (int i = 0; i < removeIndex.size(); i++) {
                                 Game.players.get(Game.currentPlayer).removePlayerCard(removeIndex.get(i));
                                 try {
                                     WhiteCard tmpCard = Game.whiteDeck.remove();
                                     tmpCard.setOwner(Game.currentPlayer);
                                     Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
-                                }catch(Exception e){
+                                } catch (Exception e) {
                                     Game.gameWon = true;
                                     Game.deckEmpty = true;
                                 }
@@ -188,33 +186,33 @@ public class PlayerCardSelection extends Activity
 
                             Game.submittedCards.add(cardsToSubmit);
 
-                            if(Game.submittedCards.size() == Game.numPlayers - 1) {
+                            if (Game.submittedCards.size() == Game.numPlayers - 1) {
                                 showCardCzarDialog();
-                            }
-
-                            else{
-                               Game.switchPlayer();
-                               showPlayerDialog();
+                            } else {
+                                Game.switchPlayer();
+                                showPlayerDialog();
                             }
                         }
                     }
                 });
             }
         }
+
     }
 
-    public void showToast(CharSequence text)
-    {
+    public void showToast(CharSequence text){
+
         Context context = getApplicationContext();
         CharSequence cs = text;
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, cs, duration);
         toast.show();
+
     }
 
-    public void showPlayerDialog()
-    {
+    public void showPlayerDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
         if(Game.isDirty) {
@@ -228,10 +226,8 @@ public class PlayerCardSelection extends Activity
         }
 
         dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
                 startActivity(new Intent(getApplicationContext(), PlayerCardSelection.class));
             }
         });
@@ -242,14 +238,16 @@ public class PlayerCardSelection extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
-    public void showCardCzarDialog()
-    {
+    public void showCardCzarDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
+
         if(Game.isDirty) {
             dialogBuilder.setMessage("Please pass the device to\nthe Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
         }
@@ -259,10 +257,8 @@ public class PlayerCardSelection extends Activity
         }
 
         dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
                 startActivity(new Intent(getApplicationContext(), CardCzarSelect.class));
             }
         });
@@ -273,30 +269,27 @@ public class PlayerCardSelection extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                               // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
-    public void showQuitDialog()
-    {
+    public void showQuitDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Quit to Main Menu");
         dialogBuilder.setMessage("If you back out now, your game will be aborted. Are you sure you want to quit?");
         dialogBuilder.setCancelable(false);
-        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-        {
+        dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
+            public void onClick(DialogInterface dialog, int which){
                 startActivity(new Intent(getApplicationContext(), MainMenu.class));
             }
         });
 
-        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
+        dialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface dialog, int which)
-            {
+            public void onClick(DialogInterface dialog, int which){
                 dialog.cancel();
             }
         });
@@ -309,6 +302,7 @@ public class PlayerCardSelection extends Activity
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
         lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
 }

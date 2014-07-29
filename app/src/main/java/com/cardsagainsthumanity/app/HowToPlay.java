@@ -6,39 +6,43 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HowToPlay extends Activity
-{
+public class HowToPlay extends Activity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_to_play);
         displayHowToPlayText();
+
     }
 
-
+    // Inflate the menu; this adds items to the action bar if it is present.
+    //getMenuInflater().inflate(R.menu.how_to_play, menu);
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.how_to_play, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+
         return true;
+
     }
 
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onOptionsItemSelected(MenuItem item){
+
         int id = item.getItemId();
-        if (id == R.id.action_settings)
+        if (id == R.id.action_settings) {
             return true;
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
     public void displayHowToPlayText(){
+
         TextView textRule1 = (TextView) findViewById(R.id.textViewRule1);
         TextView textRule2 = (TextView) findViewById(R.id.textViewRule2);
         TextView textRule3 = (TextView) findViewById(R.id.textViewRule3);
@@ -56,6 +60,7 @@ public class HowToPlay extends Activity
         textRule6.setText("After the round, the next player becomes the Card Czar, and everyone is drawn back up to ten White Cards.");
         textRule7.setText("Rules for pick 2 or 3 white Cards: Each player picks 2 or 3 white cards in combination. The cards must be played in the order the Card Czar should read them.");
         textRule8.setText("Lastly, remember to have fun!");
+
     }
 
 }

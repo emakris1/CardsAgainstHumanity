@@ -114,7 +114,9 @@
                     android:gravity="center_horizontal" />
 
             </RelativeLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
     <TextView

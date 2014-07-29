@@ -30,45 +30,48 @@ public class GameSetup extends Activity
 {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_setup);
         onButtonCreateGameClick();
+
     }
 
-
+    // Inflate the menu; this adds items to the action bar if it is present.
+    //getMenuInflater().inflate(R.menu.game_setup, menu);
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.game_setup, menu);
+    public boolean onCreateOptionsMenu(Menu menu){
+
         return true;
+
     }
 
+    // Handle action bar item clicks here. The action bar will
+    // automatically handle clicks on the Home/Up button, so long
+    // as you specify a parent activity in AndroidManifest.xml.
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onOptionsItemSelected(MenuItem item){
+
         int id = item.getItemId();
-        if (id == R.id.action_settings)
+
+        if (id == R.id.action_settings) {
             return true;
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
-    public void onButtonCreateGameClick()
-    {
+    public void onButtonCreateGameClick(){
+
         Button btn = (Button) findViewById(R.id.btnCreateGame);
         final Spinner spPlayers = (Spinner) findViewById(R.id.spinnerNumPlayers);
         final Spinner spAwesomePoints = (Spinner) findViewById(R.id.spinnerMaxAwesomePoints);
 
-        btn.setOnClickListener(new View.OnClickListener()
-        {
+        btn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view){
                 Game.numPlayers = Integer.parseInt(spPlayers.getSelectedItem().toString());
                 Game.maxAwesomePoints = Integer.parseInt(spAwesomePoints.getSelectedItem().toString());
                 Game.gameWon = false;
@@ -78,6 +81,7 @@ public class GameSetup extends Activity
                 showDialog();
             }
         });
+
     }
 
     /**
@@ -85,8 +89,8 @@ public class GameSetup extends Activity
      * clean or dirty game, and then reads from the
      * appropriate deck.
      */
-    public void readInput()
-    {
+    public void readInput(){
+
         InputStream inputS;
         BufferedReader buffR;
         String str;
@@ -94,16 +98,18 @@ public class GameSetup extends Activity
         Game.whiteDeck = new LinkedList<WhiteCard>();
 
         // Read the Black Deck
-        if (Game.isDirty)
+        if (Game.isDirty) {
             inputS = getResources().openRawResource(R.raw.dirtyblack);
-        else
+        }
+
+        else {
             inputS = getResources().openRawResource(R.raw.cleanblack);
+        }
+
         buffR = new BufferedReader(new InputStreamReader(inputS));
 
-        try
-        {
-            while ((str = buffR.readLine()) != null)
-            {
+        try{
+            while ((str = buffR.readLine()) != null){
                 Integer num = (Integer.valueOf(str.subSequence(0,1).charAt(0)) - '0');
                 String text = str.substring(2);
                 Game.blackDeck.add(new BlackCard(num, text));
@@ -111,25 +117,31 @@ public class GameSetup extends Activity
 
             buffR.close();
             inputS.close();
+        }catch (IOException ex) {
+            ex.printStackTrace();
         }
-        catch (IOException ex) {ex.printStackTrace();}
 
         // Read the White Deck
-        if (Game.isDirty)
+        if (Game.isDirty) {
             inputS = getResources().openRawResource(R.raw.dirtywhite);
-        else
+        }
+
+        else {
             inputS = getResources().openRawResource(R.raw.cleanwhite);
+        }
+
         buffR = new BufferedReader(new InputStreamReader(inputS));
 
-        try
-        {
-            while ((str = buffR.readLine()) != null)
+        try{
+            while ((str = buffR.readLine()) != null) {
                 Game.whiteDeck.add(new WhiteCard(str));
+            }
 
             buffR.close();
             inputS.close();
-        }
-        catch (IOException ex) {ex.printStackTrace();};
+        }catch (IOException ex) {
+            ex.printStackTrace();
+        };
 
         Collections.shuffle(Game.blackDeck);
         Collections.shuffle(Game.whiteDeck);
@@ -140,15 +152,13 @@ public class GameSetup extends Activity
      * Deals the white cards
      * Sets the first player in the list to be Card Czar
      */
-    public static void createPlayers()
-    {
+    public static void createPlayers(){
+
         Game.players = new ArrayList<Player>();
 
-        for (int i = 0; i < Game.numPlayers; i++)
-        {
+        for (int i = 0; i < Game.numPlayers; i++){
             Player tmpPlayer = new Player(i);
-            for (int j = 0; j < 10; j++)
-            {
+            for (int j = 0; j < 10; j++){
                 WhiteCard tmpCard = Game.whiteDeck.remove();
                 tmpCard.setOwner(i);
                 tmpPlayer.addPlayerCard(tmpCard);
@@ -160,23 +170,21 @@ public class GameSetup extends Activity
         Game.currentCardCzar = 0;
     }
 
-    public void showDialog()
-    {
+    public void showDialog(){
+
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Switch to Card Czar");
+
         if(Game.isDirty) {
             dialogBuilder.setMessage("Please pass the device to\nthe Card Czar (Douchebag " + (Game.currentCardCzar + 1) + ")");
-
         }
 
         else{
             dialogBuilder.setMessage("Please pass the device to\nthe Card Czar (Player " + (Game.currentCardCzar + 1) + ")");
         }
 
-        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
+        dialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
                 startActivity(new Intent(getApplicationContext(), CardCzarRead.class));
             }
         });
@@ -187,8 +195,9 @@ public class GameSetup extends Activity
         alertDialog.show();
 
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
+
     }
 
 }
