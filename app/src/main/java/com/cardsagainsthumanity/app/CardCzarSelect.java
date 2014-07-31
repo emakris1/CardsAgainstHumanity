@@ -20,7 +20,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
+/**
+ * This class represents the screen on which the Card Czar chooses the card(s) he/she wants as
+ * the winner of the current round. It contains all members and methods necessary to create a
+ * new instance of the screen.
+ */
 
 public class CardCzarSelect extends Activity{
 
@@ -65,6 +69,12 @@ public class CardCzarSelect extends Activity{
 
     }
 
+    /**
+     * Prevents the Card Czar from backing out to the previous player's card screen once a game has
+     * been initiated. This prevents users from breaking the game algorithm, and also serves as a
+     * safety mechanism for preventing users from accidentally backing out of a game while passing
+     * the device to another user.
+     */
     @Override
     public void onBackPressed(){
 
@@ -72,6 +82,10 @@ public class CardCzarSelect extends Activity{
 
     }
 
+    /**
+     * Displays the expanded version of the black card that players see when selecting cards to
+     * the Card Czar while choosing the winning card(s).
+     */
     public void displayBlackCardText(){
 
         final TextView txtBlackCardLarge = (TextView) findViewById(R.id.txtCZBlackCardLarge);
@@ -94,6 +108,8 @@ public class CardCzarSelect extends Activity{
         ArrayList<TextView> txtGroups = new ArrayList<TextView>();
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
 
+        // Get all of the RelativeLayouts inside of the LinearLayout.
+        // Get all of the TextViews inside of each RelativeLayout.
         for(int i = 0; i < linearLayout.getChildCount(); i++){
             rl.add((RelativeLayout) linearLayout.getChildAt(i));
             RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);
@@ -101,14 +117,18 @@ public class CardCzarSelect extends Activity{
             txtGroups.add((TextView) tempRel.getChildAt(2));
         }
 
+        // Make all white cards (RelativeLayouts containing an ImageView and TextViews) visible
+        // again in case the were disabled during a previous round.
         for(int i = 0; i < linearLayout.getChildCount(); i++){
             rl.get(i).setVisibility(View.VISIBLE);
         }
 
+        // Disable the appropriate number of white cards that will not be displayed to the Card Czar
         for(int i = (linearLayout.getChildCount() - 1); i >= Game.getCurrentBlackCard().getNumPrompts()*(Game.numPlayers - 1); i--){
             rl.get(i).setVisibility(View.GONE);
         }
 
+        // Set the white card text and card set number on each white card (TextViews).
         int k = 0;
 
         for(int i = 0; i < Game.numPlayers - 1; i++) {
@@ -120,8 +140,11 @@ public class CardCzarSelect extends Activity{
         }
     }
 
-    // Get every White Card inside of the HorizontalScrollView and add a long click event
-    // listener that submits the selected card and disables it
+    /**
+     * Get every White Card inside of the LinearLayout and add a click event listener that chooses
+     * the selected card, determines which player it belongs to, gives them an Awesome Point, and
+     * prompts the Card Czar with a dialog box explaining who won the round and/or game.
+     */
     public void onWhiteCardClick(){
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.LLCardCzarSelect);
@@ -163,11 +186,14 @@ public class CardCzarSelect extends Activity{
 
     }
 
+    /**
+     * Shows a dialog box to the Card Czar explaining who won the round and/or game.
+     */
     public void showRoundWinnerDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
-        // Check whether Awesome Point(s) should be plural or not.
+        // Check whether Awesome Point(s) should be plural.
         String awesomePoints;
 
         if (Game.maxAwesomePoints > 1) {
@@ -237,16 +263,22 @@ public class CardCzarSelect extends Activity{
             });
         }
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
     }
 
+    /**
+     * Show a dialog box to the user when the back button is pressed confirming if they want to
+     * quit the current game in progress.
+     */
     public void showQuitDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -272,13 +304,15 @@ public class CardCzarSelect extends Activity{
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }

@@ -36,8 +36,6 @@ public class GameSetup extends Activity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_setup);
-
-        // Initialize the Create Game button's onClick() listener
         onButtonCreateGameClick();
 
     }

@@ -25,11 +25,7 @@ public class VersionSelection extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_version_selection);
-
-        // Initialize the "Dirty" Deck button's onClick() listener
         onDirtyButtonClick();
-
-        // Initialize the "Clean" Deck button's onClick() listener
         onCleanButtonClick();
 
     }

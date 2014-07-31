@@ -22,7 +22,7 @@ import android.graphics.Color;
 import java.util.ArrayList;
 
 /**
- * This class represents the screen on which players choose the cards they wish to submit for the
+ * This class represents the screen on which players choose the card(s) they want to submit for the
  * current round. It contains all members and methods necessary to create a new instance of the screen.
  */
 
@@ -68,6 +68,12 @@ public class PlayerCardSelection extends Activity{
 
     }
 
+    /**
+     * Prevents the current player from backing out to the Card Czar's read card screen once a game
+     * has been initiated. This prevents users from breaking the game algorithm, and also serves as
+     * a safety mechanism for preventing users from accidentally backing out of a game while passing
+     * the device to another user.
+     */
     @Override
     public void onBackPressed(){
 
@@ -168,7 +174,7 @@ public class PlayerCardSelection extends Activity{
 
     }
 
-    // Get every White Card inside of the HorizontalScrollView and add a click event
+    // Get every White Card inside of the LinearLayout and add a click event
     // listener that submits the selected card and disables it.
     public void onWhiteCardClick(){
 
@@ -230,7 +236,7 @@ public class PlayerCardSelection extends Activity{
     }
 
     /**
-     * Shows a toast to the user for confirmation that their card has been submitted.
+     * Shows a toast notification to the user for confirmation that their card has been submitted.
      * @param text
      */
     public void showToast(CharSequence text){
@@ -244,6 +250,10 @@ public class PlayerCardSelection extends Activity{
 
     }
 
+    /**
+     * Shows a dialog box to the player with the screen behind blacked out so that the they
+     * don't accidentally see the next player's cards while passing them the device.
+     */
     public void showPlayerDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -265,17 +275,24 @@ public class PlayerCardSelection extends Activity{
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }
 
+    /**
+     * Shows a dialog box to the last player of the current round with the screen behind blacked out
+     * so that the Card Czar doesn't accidentally see the previous player's cards while the device
+     * is passed to them.
+     */
     public void showCardCzarDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -296,17 +313,23 @@ public class PlayerCardSelection extends Activity{
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                               // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }
 
+    /**
+     * Show a dialog box to the user when the back button is pressed confirming if they want to
+     * quit the current game in progress.
+     */
     public void showQuitDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -327,13 +350,15 @@ public class PlayerCardSelection extends Activity{
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;     // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }

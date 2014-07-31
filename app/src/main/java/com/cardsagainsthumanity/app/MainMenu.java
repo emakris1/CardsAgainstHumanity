@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * This class implements the Main Menu screen, where users can elect to start a new game or read
+ * This class implements the main menu screen, where users can elect to start a new game or read
  * the How To Play reference. It contains all members and methods necessary to create a new
  * instance of the screen.
  */
@@ -26,11 +26,7 @@ public class MainMenu extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
-        // Initialize the Play Game button's onClick() listener
         onPlayGameButtonClick();
-
-        // Initialize the How To Play button's onClick() listener
         onHowToPlayButtonClick();
 
     }

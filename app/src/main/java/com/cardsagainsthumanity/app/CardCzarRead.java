@@ -30,7 +30,7 @@ public class CardCzarRead extends Activity{
         setContentView(R.layout.activity_card_czar_read);
         Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
 
-        // Initialize the black card image and text
+        // Check if there are still black cards in the deck, then initialize the black card image and text
         try {
             displayBlackCardText();
         }catch(Exception e){
@@ -38,8 +38,6 @@ public class CardCzarRead extends Activity{
             Game.gameWon = true;
             showQuitDialog();
         }
-
-        // Initialize the black card's onClick() listener
         onBlackCardClick();
 
     }
