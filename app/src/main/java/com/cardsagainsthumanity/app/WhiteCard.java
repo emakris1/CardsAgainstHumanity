@@ -6,20 +6,36 @@ package com.cardsagainsthumanity.app;
 
 public class WhiteCard{
 
-    private String text;
-    private Integer owner;
+    private String text;                                //String that stores the white card text
+    private Integer owner;                              //Integer that stores the owner of a white card
 
+
+    /**
+     * Constructor to assign the text string.\
+     * @param str
+     * Assigns String str to String text
+     */
     public WhiteCard(String str) {
 
         this.text = str;
 
     }
 
+    /**
+     * Method used to retrieve text for black card
+     * @return this.text
+     */
     public String getText() {
 
         return this.text;
 
     }
+
+
+    /**
+     * Method used to retrieve the owner of a white card
+     * @return this.numPrompts
+     */
 
     public Integer getOwner() {
 

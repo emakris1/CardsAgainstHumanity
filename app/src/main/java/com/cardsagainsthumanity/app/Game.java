@@ -10,19 +10,19 @@ import java.util.LinkedList;
 public class Game
 {
 
-    public static LinkedList<BlackCard> blackDeck;
-    public static LinkedList<WhiteCard> whiteDeck;
-    public static BlackCard currentBlackCard;
-    public static ArrayList<ArrayList<WhiteCard>> submittedCards;   //two dimensional ArrayList for cases when multiple white cards are submitted
-    public static ArrayList<Player> players;
-    public static Boolean isDirty;
-    public static int maxAwesomePoints;
-    public static int numPlayers;
-    public static int currentCardCzar;
-    public static int currentPlayer;
-    public static int winningPlayer;
-    public static boolean gameWon;
-    public static boolean deckEmpty;
+    public static LinkedList<BlackCard> blackDeck;                  //LinkedList of black Cards for storing the black cards.
+    public static LinkedList<WhiteCard> whiteDeck;                  //LinkedList of White Cards for storing the white cards.
+    public static BlackCard currentBlackCard;                       //Black card object for storing the current black card.
+    public static ArrayList<ArrayList<WhiteCard>> submittedCards;   //two dimensional ArrayList for cases when multiple white cards are submitted.
+    public static ArrayList<Player> players;                        //ArrayList for storing the players.
+    public static Boolean isDirty;                                  //Boolean for deciding wither the dirty version is selected.
+    public static int maxAwesomePoints;                             //int for storing the number of awesome points.
+    public static int numPlayers;                                   //integer for storing the number of players the user decides on.
+    public static int currentCardCzar;                              //integer for storing the current Card Czar.
+    public static int currentPlayer;                                //integer for storing the current player.
+    public static int winningPlayer;                                //integer for storing which player is the winning player.
+    public static boolean gameWon;                                  //boolean for deciding if the game has been won or not.
+    public static boolean deckEmpty;                                //boolean for deciding if a deck is empty.
 
     /**
      * Method to alternate the role of card czar.
@@ -126,5 +126,3 @@ public class Game
     }
 
 }
-
-
