@@ -14,7 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * This is the screen on which the user will select which version of the game he or she will be playing.
+ * This class implements the screen where users can select which version of the game they want to
+ * play. It contains all members and methods necessary to create a new instance of the screen.
  */
 
 public class VersionSelection extends Activity{
@@ -24,7 +25,11 @@ public class VersionSelection extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_version_selection);
+
+        // Initialize the "Dirty" Deck button's onClick() listener
         onDirtyButtonClick();
+
+        // Initialize the "Clean" Deck button's onClick() listener
         onCleanButtonClick();
 
     }
@@ -55,9 +60,8 @@ public class VersionSelection extends Activity{
     }
 
     /**
-     * Sets up the Dirty Deck button so that when it is clicked, a dialog prompt to confirm
-     * the user's age appears. Game.isDirty is set to true or false depending on the answer,
-     * and the GameSetup activity is started.
+     * Show a dialog box when the "Dirty" Deck button is clicked to confirm if the user is over
+     * 18 years old before continuing to Game Setup with the dirty card decks marked for use.
      */
     public void onDirtyButtonClick(){
 
@@ -73,8 +77,8 @@ public class VersionSelection extends Activity{
     }
 
     /**
-     * Sets up the Clean Deck button so that when it is clicked, Game.isDirty is set to false
-     * and the GameSetup activity is started.
+     * Launches the Game Setup screen when the "Clean" Deck button is clicked. The clean decks will
+     * be marked for use.
      */
     public void onCleanButtonClick(){
 
@@ -115,13 +119,15 @@ public class VersionSelection extends Activity{
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }

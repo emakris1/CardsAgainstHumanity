@@ -16,6 +16,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This class implements the screen on which the Card Czar will read the black card to all other
+ * users. It contains all members and methods necessary to create a new instance of the screen.
+ */
 
 public class CardCzarRead extends Activity{
 
@@ -26,6 +30,7 @@ public class CardCzarRead extends Activity{
         setContentView(R.layout.activity_card_czar_read);
         Game.submittedCards = new ArrayList<ArrayList<WhiteCard>>();
 
+        // Initialize the black card image and text
         try {
             displayBlackCardText();
         }catch(Exception e){
@@ -34,6 +39,7 @@ public class CardCzarRead extends Activity{
             showQuitDialog();
         }
 
+        // Initialize the black card's onClick() listener
         onBlackCardClick();
 
     }
@@ -66,6 +72,11 @@ public class CardCzarRead extends Activity{
 
     }
 
+    /**
+     * Prevents the user from backing out to Game Setup once a game has been initiated. This prevents
+     * users from breaking the game algorithm, and also serves as a safety mechanism for preventing
+     * users from accidentally backing out of a game while passing the device to another user.
+     */
     @Override
     public void onBackPressed(){
 
@@ -73,6 +84,9 @@ public class CardCzarRead extends Activity{
 
     }
 
+    /**
+     * Pulls a black card from the black card deck and displays it to the Card Czar
+     */
     public void displayBlackCardText(){
 
         TextView text = (TextView) findViewById(R.id.txtCZBlackCardLarge);
@@ -81,8 +95,10 @@ public class CardCzarRead extends Activity{
 
     }
 
-    //Set the next player to follow the Card Czar
-    // Show a dialog to pass the device to the next player.
+    /**
+     * Sets the next player to follow the current Card Czar and shows a dialog
+     * to pass the device to the next player when the black card is clicked.
+     */
     public void onBlackCardClick(){
 
         Game.setNewRoundPlayer();
@@ -97,6 +113,10 @@ public class CardCzarRead extends Activity{
 
     }
 
+    /**
+     * Shows a dialog box to the CardCzar with the screen behind blacked out so that the Card Czar
+     * doesn't accidentally see the player's cards while passing them the device.
+     */
     public void showPlayerDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -118,17 +138,23 @@ public class CardCzarRead extends Activity{
                 }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }
 
+    /**
+     * Show a dialog box to the user when the back button is pressed confirming if they want to
+     * quit the current game in progress.
+     */
     public void showQuitDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -171,13 +197,15 @@ public class CardCzarRead extends Activity{
             });
         }
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
     }
 

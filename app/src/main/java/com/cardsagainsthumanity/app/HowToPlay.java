@@ -6,6 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+/**
+ * This class implements the How To Play screen, where users are presented with a quick overview
+ * of how to play Cards Against Humanity in this application. It contains all members and methods
+ * necessary to create a new instance of the screen.
+ */
+
 public class HowToPlay extends Activity{
 
     @Override

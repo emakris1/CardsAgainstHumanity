@@ -23,7 +23,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
- * Activity Screen on which the user selects the number of players and the target number of awesome points.
+ * This class implements the screen on which users can set the number of players who will participate
+ * and the maximum number of awesome points required to win a game. It contains all members and
+ * methods necessary to create a new instance of the screen.
  */
 
 public class GameSetup extends Activity
@@ -34,6 +36,8 @@ public class GameSetup extends Activity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_setup);
+
+        // Initialize the Create Game button's onClick() listener
         onButtonCreateGameClick();
 
     }
@@ -63,6 +67,12 @@ public class GameSetup extends Activity
 
     }
 
+    /**
+     * Initializes all variables and data structures required for playing a game once the
+     * Create Game button is clicked. All players and card decks are created, counters and flags
+     * are initialized, and a dialog box is presented to the current user to pass the device to
+     * the first player.
+     */
     public void onButtonCreateGameClick(){
 
         Button btn = (Button) findViewById(R.id.btnCreateGame);
@@ -85,9 +95,8 @@ public class GameSetup extends Activity
     }
 
     /**
-     * Reads input; checks if the user is playing the
-     * clean or dirty game, and then reads from the
-     * appropriate deck.
+     * Reads all input files, checks if the user is playing the clean or dirty game, and then loads
+     * the appropriate deck into the Game class.
      */
     public void readInput(){
 
@@ -143,14 +152,15 @@ public class GameSetup extends Activity
             ex.printStackTrace();
         };
 
+        // Shuffle the decks so that cards are in random order when removed.
         Collections.shuffle(Game.blackDeck);
         Collections.shuffle(Game.whiteDeck);
     }
 
     /**
-     * Method to create the list of players
-     * Deals the white cards
-     * Sets the first player in the list to be Card Czar
+     * Creates the list of players. The number of players created is determined by the
+     * Game.numPlayers variable. Each player is dealt 10 cards from the white deck.
+     * Finally, the Card Czar is initialized as the first player.
      */
     public static void createPlayers(){
 
@@ -170,6 +180,9 @@ public class GameSetup extends Activity
         Game.currentCardCzar = 0;
     }
 
+    /**
+     * Show a dialog to pass the device to the first player, who will server as the first Card Czar.
+     */
     public void showDialog(){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -189,13 +202,15 @@ public class GameSetup extends Activity
             }
         });
 
+        // Center the text inside the dialog box's message area
         AlertDialog alertDialog = dialogBuilder.show();
         TextView txtMessage = (TextView) alertDialog.findViewById(android.R.id.message);
         txtMessage.setGravity(Gravity.CENTER);
         alertDialog.show();
 
+        // Blackout the screen behind the dialog box
         WindowManager.LayoutParams lp = alertDialog.getWindow().getAttributes();
-        lp.dimAmount = 1;                                                                   // Dim level. 0.0 - no dim, 1.0 - completely opaque
+        lp.dimAmount = 1;   // Dim level. 0.0 - no dim, 1.0 - completely opaque
         alertDialog.getWindow().setAttributes(lp);
 
     }

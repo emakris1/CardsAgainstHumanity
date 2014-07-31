@@ -20,10 +20,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * There are 24 card images in the Linear Layout; not all of them will have a submitted white card associated with them
- * use FrameLayout.setVisibility(View.GONE); to disable cards that aren't related to submitted cards
- */
+
 
 public class CardCzarSelect extends Activity{
 
@@ -82,7 +79,14 @@ public class CardCzarSelect extends Activity{
 
     }
 
-    //Only include 21 cards in the CardCzarSelect xml. Only allow eight players to play
+    /**
+     * Displays all of the submitted white cards to the Card Czar. The LinearLayout where the cards
+     * are displayed contains 60 white cards with images and text wrapped in a RelativeLayout. This
+     * functions enables the appropriate number of RelativeLayouts (numbers of players * number of
+     * prompts for the current black card) to display the submitted cards, and disables all other
+     * unused RelativeLayouts by setting their visibility to GONE so that they are not visible or
+     * clickable to the user.
+     */
     public void displaySubmittedCardText(){
 
         ArrayList<RelativeLayout> rl = new ArrayList<RelativeLayout>();
@@ -92,8 +96,8 @@ public class CardCzarSelect extends Activity{
 
         for(int i = 0; i < linearLayout.getChildCount(); i++){
             rl.add((RelativeLayout) linearLayout.getChildAt(i));
-            RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);   //I tried doing the TextView on one line,
-            txtWhiteCards.add((TextView) tempRel.getChildAt(1));                             //but it threw an error
+            RelativeLayout tempRel = (RelativeLayout) linearLayout.getChildAt(i);
+            txtWhiteCards.add((TextView) tempRel.getChildAt(1));
             txtGroups.add((TextView) tempRel.getChildAt(2));
         }
 
