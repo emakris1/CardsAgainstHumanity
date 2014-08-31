@@ -55,12 +55,6 @@ public class Player{
 
     }
 
-    public void addPlayerCard(int index, WhiteCard card){
-
-        playerCards.add(index, card);
-
-    }
-
     /**
      * Method to be used when a player submits a white card from the GameScreen
      * @param index

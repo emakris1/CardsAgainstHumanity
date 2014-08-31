@@ -172,12 +172,12 @@ public class PlayerCardSelection extends Activity{
                         submitted.setText("Submit Cards: " + cardsToSubmit.size() + "/" + Game.getCurrentBlackCard().getNumPrompts());
 
                         if (cardsToSubmit.size() == Game.currentBlackCard.getNumPrompts()) {
-                            for (int j = 0; j < removeIndex.size(); j++) {
-                                Game.players.get(Game.currentPlayer).removePlayerCard(removeIndex.get(j));
+                            for (int i = 0; i < removeIndex.size(); i++) {
+                                Game.players.get(Game.currentPlayer).removePlayerCard(removeIndex.get(i));
                                 try {
                                     WhiteCard tmpCard = Game.whiteDeck.remove();
                                     tmpCard.setOwner(Game.currentPlayer);
-                                    Game.players.get(Game.currentPlayer).addPlayerCard(removeIndex.get(j), tmpCard);
+                                    Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
                                 } catch (Exception e) {
                                     Game.gameWon = true;
                                     Game.deckEmpty = true;
