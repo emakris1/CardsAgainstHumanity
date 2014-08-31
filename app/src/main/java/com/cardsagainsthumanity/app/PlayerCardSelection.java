@@ -177,7 +177,7 @@ public class PlayerCardSelection extends Activity{
                                 try {
                                     WhiteCard tmpCard = Game.whiteDeck.remove();
                                     tmpCard.setOwner(Game.currentPlayer);
-                                    Game.players.get(Game.currentPlayer).addPlayerCard(tmpCard);
+                                    Game.players.get(Game.currentPlayer).addPlayerCard(removeIndex.get(i), tmpCard);
                                 } catch (Exception e) {
                                     Game.gameWon = true;
                                     Game.deckEmpty = true;
